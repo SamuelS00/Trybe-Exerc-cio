@@ -1,0 +1,55 @@
+Parte_1_Resolução.txt
+
+-> Exercício - 1 (Abrir o diretório "unix_tests")
+    cd unix_tests
+
+-> Exercício - 2 (Criar arquivo "skills2.txt" e adicione os valores "internet", "Unix" e "Bash")
+    cat > skills.txt
+     -internet
+     -Unix
+     -Bash
+
+-> Exercício - 3 (adicionar 5 linhas no arquivo "skills2.txt")
+    cat >> skills.txt 
+     -Aplicativo
+     -GitHUb
+     -Git
+     -Html
+     -Css
+
+-> Exercício - 4 (contar linhas do arquivo "skills2")
+    cat skills2.txt | wc -l
+  
+-> Exercício - 5 (criar arquivo chamado "top_skills.txt", com as 3 primeiras skills do arquivo "skills.txt")
+    cat skills2.txt | sort | head -3 > top_skills.txt
+
+-> Exercício - 6 (crir um arquivo "phrases2.txt" e colocar algumas frases)
+    cat > phrases2.txt
+     -“Grandes poderes trazem grandes responsabilidades.”
+     -“I am you father.”
+     -“Houston, we have a problem.”
+     -“Estradas? Para onde vamos não precisamos de estradas.”
+     -“Meu precioso.”
+     -“Dadinho é o caralho, meu nome é Zé Pequeno, porra!” 
+     -“Você não é caveira. Você é moleque!”
+     -“Que a Força esteja com você”. 
+     -“Ou você morre herói, ou vive o suficiente para se tornar o vilão.” 
+     “A primeira regra do Clube da Luta é: você não fala sobre o Clube da Luta.”
+
+-> Exercício - 7 (contar número de linhas que contêm as letras "br")
+    grep -c br phrases2.txt
+
+-> Exercício - 8 (contar número de linhas que "não" contêm as letras "br")
+    grep -vc br phrases2.txt
+
+-> Exercício - 9 (adicionar 2 países ao final do arquivo "phrases2.txt")
+    cat >> phrases2.txt
+     -Peru >< 
+     -Países Baixo 
+
+-> Exercício - 10 (criar novo arquivo chamado "bunch_of_things.txt" com o conteúdo dos arquivos "phrases2.txt e "countries.txt")
+    cat phrases2.txt countries.txt > bunch_of_things.txt
+
+-> Exercício - 11 (ordenar op arquivos "bunch_of_things.txt")
+    sort -o bunch_of_things.txt bunch_of_things.txt
+    
