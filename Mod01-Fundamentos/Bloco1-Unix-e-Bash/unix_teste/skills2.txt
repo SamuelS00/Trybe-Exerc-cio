@@ -1,0 +1,8 @@
+Internet 
+Unix 
+Bash 
+APlicação 
+Html 
+Java Script 
+Css 
+Dom 

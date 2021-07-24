@@ -1,0 +1,19 @@
+Parte_2_Resolução.txt 
+
+-> Exercício - 1 (navegar até "unix_tests")
+    cd unix_tests
+
+-> Exercício - 2 (digite o comando "ls -l" e veja as permissoes)
+    ls -l
+
+-> Exercício - 3 (mude as permissões do arquivo "bunch_of_things.txt")
+    chmod 666 bunch_of_things.txt
+    ls -l bunch_of_things.txt
+   
+-> Exercício - 4 (tire a peermissão de escrita do arquivo "bunch_of_things.txt")
+    chmod a-w bunch_of_things.txt   
+    ls -l bunch_of_things.txt
+  
+-> Exercício - 5 (volte à perimissão do arquivo "bunch_of_things.txt" para "chmod 644 bunch_of_things.txt")
+    chmod 644 bunch_of_things.txt
+    ls -l bunch_of_things.txt
