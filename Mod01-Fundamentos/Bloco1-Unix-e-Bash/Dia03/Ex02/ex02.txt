@@ -1,0 +1,44 @@
+Parte_2_Resolução.txt
+
+-> Exercício - 1 (baixar na pasta "unix_tests", Ultilizando o link curl... o link usado está na linha de baixo.)
+    curl -s -o countries.txt "https://gist.githubusercontent.com/kalinchernev/486393efcca01623b18d/raw/daa24c9fea66afb7d68f8d69f0c4b8eeb9406e83/countries"
+
+-> Exercício - 2 (mostrar o conteúdo do arquivo "countries.txt" na tela)
+    cat countries.txt
+   
+-> Exercício - 3 (mostrar o contéudo do arquivo "countries.txt", com o modo exibição, até encontrar "Zambia")
+    less countries.txt
+   
+-> Exercício - 4 (agora use o modo de exibição para buscar por "Zambia")
+    navegar com as teclas "n" (next) e "p" (previus)
+  
+-> Exercício - 5 (Buscar o "Brazil" em "countries.txt")
+    grep -e "brazil" countries.txt
+
+-> Exercício - 6 (Buscar o "Brazil" novamente ultilizando "lower case")
+    grep -i "brazil" countries.txt
+
+-> Exercício - 7 (Buscar frases que não contenham a palavra "fox")
+    grep -v ^#fox"
+
+-> Exercício - 8 (contar o número de palavras do arquivo "phrases.txt")
+    cat phrases.txt | wc -w
+
+-> Exercício - 9 (contar o número de linhas do arquivo "phrases.txt")
+    cat phrases.txt | wc -l
+
+-> Exercício - 10 (criar 2 arquivos "empty.tbt" e "empty.pdf")
+    touch empty.tbt empty.pdf
+
+-> Exercício - 11 (listar todos os arquivos do diretório "unix_tests")
+    ls -a
+
+-> Exercício - 12 (listar aquivos terminados com "txt")
+    ls -a *.txt
+
+-> Exercício - 13 (listar todos os arquivos que terminem em "tbt" e "txt")
+    ls -a * . tbt txt
+
+-> Exercício - 14 (acessar manual do comando "ls")
+    man ls
+    

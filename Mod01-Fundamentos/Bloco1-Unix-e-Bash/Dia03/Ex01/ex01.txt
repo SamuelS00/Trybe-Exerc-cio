@@ -1,0 +1,55 @@
+Parte_1_Resolução.txt
+
+-> Exercício - 1 (criar um diretório chamado "unix_tests", depois entre.)
+    mkdir unix_tests
+    cd unix_tests
+
+-> Exercício - 2 (criar um arquivo de texto chamado "trybe.txt")
+    touch trybe.txt
+   
+-> Exercício - 3 (criar uma cópia do aquivo "trybe.txt" com o nome "trybe_backup.txt")
+    cp trybe.txt trybe_backup.txt 
+   
+-> Exercício - 4 (renomear arquivo "trybe.txt")
+    mv trybe.txt novoNome.txt
+  
+-> Exercício - 5 (mudar para o diretório "unix_tests", e depois criar um diretório chamado "backup")
+    cd unix_tests
+    mkdir backup
+
+-> Exercício - 6 (mover o arquivo "trybe_backup.txt" para o diretório "backup")
+    mv trybe_backup.txt backup
+
+-> Exercício - 7 (mover o para "unix_tests", e depois criar um diretório chamado "backup2")
+    cd unix_tests
+    mkdir backup2
+
+-> Exercício - 8 (mover o "trybe_backup.txt" para o diretório "backup2")
+    cd backup
+    mv trybe_backup.txt ..
+    mv trybe_backup.txt backup2
+
+-> Exercício - 9 (apagar diretório "backup")
+    rmdir backup
+
+-> Exercício - 10 (renomear o diretório "backup2" para "backup")
+    mv backup2 backup
+
+-> Exercício - 11 (ver o caminho do diretorio atual, e listar os aquivos dentro dele)
+    pwd 
+    ls . (output.pwd)
+
+-> Exercício - 12 (apagar diretório "backup")
+    rmdir backup
+
+-> Exercício - 13 (limpar terminal)
+    clear 
+
+-> Exercício - 14 (mostre na tela as 5 primeiras "skill" do arquivo "skills.txt")
+    Head -5 skills.txt
+ 
+-> Exercício - 15 (mostre as 4 últimas "skill" do aquivo "skills.txt")
+    tail -4 skills.txt 
+
+-> Exercício - 16 (apagar todos os arquivos terminados em txt)
+    rm -rf *.txt
