@@ -1,0 +1,60 @@
+<main id="paiDoPai">
+  <section id="pai">
+    <section id="primeiroFilho"></section>
+    <section id="elementoOndeVoceEsta">
+      <section id="primeiroFilhoDoFilho"></section>
+      <section id="segundoEUltimoFilhoDoFilho"></section>
+    </section>
+    Atenção!
+    <section id="terceiroFilho"></section>
+    <section id="quartoEUltimoFilho"></section>
+  </section>
+  <script>
+    //Exercicios part 1
+
+    console.log(document.getElementById("elementoOndeVoceEsta"))
+    console.log(document.getElementById("elementoOndeVoceEsta").parentNode)
+    console.log(document.getElementById("primeiroFilhoDoFilho").innerText = "primeirofilhodofilho")
+    console.log(document.getElementById("pai").firstElementChild)
+    console.log(document.getElementById("elementoOndeVoceEsta").previousElementSibling)
+    console.log(document.getElementById("elementoOndeVoceEsta").nextSibling)
+    console.log(document.getElementById("elementoOndeVoceEsta").nextElementSibling)
+    console.log(document.getElementById("pai").firstElementChild.nextElementSibling.nextElementSibling)
+    //Exercicios part 2
+
+    let irmãoELement = document.createElement("section");
+    let pai = document.getElementById("pai");
+    pai.appendChild(irmãoELement)
+
+    let filho = document.createElement("teceiroFilho");
+    let paiElement = document.getElementById("elementoOndeVoceEsta");
+    paiElement.appendChild(filho);
+
+    let filhoPFDF = document.createElement("section")
+    let paiPFDF = document.getElementById("primeiroFilhoDoFilho");
+    paiPFDF.appendChild(filhoPFDF)
+
+    filhoPFDF.parentElement.nextElementSibling.nextElementSibling
+    // Exercicios part 3
+
+    let PrimeiroFIlho = document.getElementById("primeiroFilho")
+    let FilhoELementoSegundo = document.getElementById("elementoOndeVoceEsta").lastElementChild
+    let TerceiroFilho = document.getElementById("elementoOndeVoceEsta").nextElementSibling
+    let QuartoFilho = document.getElementById("elementoOndeVoceEsta").nextElementSibling.nextElementSibling
+
+    PrimeiroFIlho.className = "apagar";
+    FilhoELementoSegundo.className = "apagar";
+    TerceiroFilho.className = "apagar";
+    QuartoFilho.className = "apagar";
+
+    let apagar = document.querySelectorAll(".apagar")
+    let comprimentoLista = apagar.length;
+
+    for (let index = 0; index < comprimentoLista; index += 1) {
+      if (apagar[index].className == "apagar") {
+        apagar[index].parentNode.removeChild(apagar[index])
+      }
+    }
+    
+  </script>
+</main>
