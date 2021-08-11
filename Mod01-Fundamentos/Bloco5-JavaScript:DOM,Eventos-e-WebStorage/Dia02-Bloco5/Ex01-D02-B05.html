@@ -86,6 +86,26 @@
        imagem.src = "https://picsum.photos/200 "
        imagem.className = "small-image"
        SegundaSecao.appendChild(imagem)
+       // Requisito 8 
+       let lista = document.createElement("ul");
+       let Números = {
+         1:"um",
+         2:"dois",
+         3:"três",
+         4:"quatro",
+         5:"cinco",
+         6:"seis",
+         7:"sete",
+         8:"oito",
+         9:"nove",
+         10:"dez"
+       }
+       for(let index in Números){
+        let li = document.createElement("li")
+        li.innerText = Números[index];
+        lista.appendChild(li);
+       }
+       TerceiraSecao.appendChild(lista)
        
        
       
