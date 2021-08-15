@@ -59,4 +59,24 @@ function createDaysOfTheWeek() {
 
   BotãoFeriado("Feriados")
 
+  //Exercicio 3
+  function AdicionaEventoClickBotão () {
+    let Botão = document.getElementById("btn-holiday");
+    let Dias = document.querySelectorAll(".holiday");
+    let corDeFundo = "rgb(238,238,238)";
+    let corInicial = "white";
+    let comprimentoBotão = Dias.length;
+    Botão.addEventListener("click", function() {
+      for(let index = 0; index < comprimentoBotão; index+= 1) {
+        if(Dias[index].style.background === corInicial) {
+          Dias[index].style.background = corDeFundo;
+        } else {
+          Dias[index].style.background = corInicial;
+        }
+      }
+    })
+  }
+
+  AdicionaEventoClickBotão()
+
   
