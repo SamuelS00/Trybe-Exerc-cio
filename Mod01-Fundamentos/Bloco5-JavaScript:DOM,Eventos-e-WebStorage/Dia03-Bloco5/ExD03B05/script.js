@@ -79,4 +79,15 @@ function createDaysOfTheWeek() {
 
   AdicionaEventoClickBotão()
 
-  
+  //Exercicio 4
+  function BotãoSexta (string) {
+    let divContainer = document.querySelector(".buttons-container")
+    let botão = document.createElement("button")
+    let IdBotão = "btn-friday"
+
+    botão.innerHTML = string;
+    botão.id = IdBotão;
+    divContainer.appendChild(botão)
+  }
+
+  BotãoSexta("Sexta-Feira")
