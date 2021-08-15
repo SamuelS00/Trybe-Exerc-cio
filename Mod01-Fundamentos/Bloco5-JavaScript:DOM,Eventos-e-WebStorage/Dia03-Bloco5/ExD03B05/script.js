@@ -146,3 +146,14 @@ function createDaysOfTheWeek() {
 }
 
 tarefaPersonalizada("cozinhar")
+
+//Exercicio 8 
+function legendaCorNaTarefa (string) {
+  let DivCor = document.createElement("div");
+  let Div = document.querySelector(".my-tasks");
+  DivCor.className = "task"
+  DivCor.style.backgroundColor = string;
+  Div.appendChild(DivCor)
+}
+
+legendaCorNaTarefa("Red")
