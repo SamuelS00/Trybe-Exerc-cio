@@ -137,4 +137,12 @@ function createDaysOfTheWeek() {
  mouseOverZoom()
  mouseOutZoom()
 
- 
+ //Exercicio 7
+ function tarefaPersonalizada (string) {
+  let Div = document.querySelector(".my-tasks");
+  let Tarefa = document.createElement("span");
+  Tarefa.innerHTML = string
+  Div.appendChild(Tarefa)
+}
+
+tarefaPersonalizada("cozinhar")
