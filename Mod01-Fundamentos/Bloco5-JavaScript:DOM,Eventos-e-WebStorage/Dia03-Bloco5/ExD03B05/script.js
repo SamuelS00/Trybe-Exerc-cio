@@ -157,3 +157,20 @@ function legendaCorNaTarefa (string) {
 }
 
 legendaCorNaTarefa("Red")
+
+//Exercicio 9
+function CheckNaTarefa () {
+  let Seletados = document.getElementsByClassName("task selected");
+  let Div = document.querySelector(".task")
+  
+  Div.addEventListener("click", function(evento){
+    if(Seletados.length === 0){
+      evento.target.className = "task selected";
+    } else {
+      evento.target.className = "task";
+    }
+  })
+  
+}
+
+CheckNaTarefa();
