@@ -44,3 +44,19 @@ function createDaysOfTheWeek() {
    }
   
   CriaDiasDoMes();
+
+
+  // Exercicio 2
+  function BotãoFeriado (string) {
+    let divContainer = document.querySelector(".buttons-container")
+    let botão = document.createElement("button")
+    let IdBotão = "btn-holiday"
+
+    botão.innerHTML = string;
+    botão.id = IdBotão;
+    divContainer.appendChild(botão)
+  };
+
+  BotãoFeriado("Feriados")
+
+  
