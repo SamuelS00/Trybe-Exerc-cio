@@ -174,3 +174,23 @@ function CheckNaTarefa () {
 }
 
 CheckNaTarefa();
+
+//Exercicio 10 
+function CorChecKDiaMes () {
+  let DivSelectedTask = document.getElementsByClassName("task selected");
+  let Dias = document.getElementById("days")
+  let DivTask = document.querySelector(".task")
+  let DivTaskColor = DivTask.style.backgroundColor;
+
+  Dias.addEventListener("click",function(evento){
+    let CaminhoCor = evento.target.style.color;
+    if (DivSelectedTask.length > 0 && CaminhoCor !== DivTaskColor) {
+      let cor = DivSelectedTask[0].style.backgroundColor;
+      evento.target.style.color = cor;
+    } else if (CaminhoCor === DivTaskColor && DivSelectedTask.length !== 0) {
+      evento.target.style.color = 'rgb(119,119,119)'
+    }
+  })
+}
+
+CorChecKDiaMes()
