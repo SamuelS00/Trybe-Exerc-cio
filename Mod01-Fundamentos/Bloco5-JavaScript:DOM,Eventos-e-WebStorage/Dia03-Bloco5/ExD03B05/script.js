@@ -91,3 +91,28 @@ function createDaysOfTheWeek() {
   }
 
   BotãoSexta("Sexta-Feira")
+
+
+  //Exercicio 5
+  function AdicionaEventoClickBotãoSexta (array) {
+    let Botão = document.getElementById("btn-friday");
+    let Dias = document.querySelectorAll(".friday");
+    let Texto = "DESCANSO, SQN.";
+    let comprimentoBotão = Dias.length;
+
+    Botão.addEventListener("click", function() { 
+      
+      for(let index = 0; index < comprimentoBotão; index += 1) {
+        if(Dias[index].innerHTML !== Texto) {
+           Dias[index].innerHTML = Texto;
+        } else {
+           Dias[index].innerHTML = Diasxta[index];
+        }
+      }
+    })
+  }
+  
+  let Diasxta = [4,11,18,25]
+  AdicionaEventoClickBotãoSexta(Diasxta)
+
+  
