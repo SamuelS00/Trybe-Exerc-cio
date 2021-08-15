@@ -115,4 +115,26 @@ function createDaysOfTheWeek() {
   let Diasxta = [4,11,18,25]
   AdicionaEventoClickBotãoSexta(Diasxta)
 
-  
+  //Exercicio 6
+  function mouseOverZoom () {
+    let Dias = document.querySelector("#days"); 
+
+    Dias.addEventListener("mouseover",function(evento) {
+      evento.target.style.fontSize = "30px";
+      evento.target.style.fontWeigt = "600";
+    })
+ };
+
+ function mouseOutZoom () {
+    let Dias = document.querySelector("#days");
+
+    Dias.addEventListener("mouseout", function(evento){
+      evento.target.style.fontWeigt = "200";
+      evento.target.style.fontSize = "20px";
+    })
+ };
+
+ mouseOverZoom()
+ mouseOutZoom()
+
+ 
