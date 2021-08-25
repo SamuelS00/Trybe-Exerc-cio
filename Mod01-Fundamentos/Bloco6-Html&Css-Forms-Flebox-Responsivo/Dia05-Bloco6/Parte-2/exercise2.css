@@ -18,7 +18,35 @@
     display: none;
   }
 
+    /* Grande Layout 1024x768 */
+  @media screen and (min-width: 1000px) {
+   
+      article h1 {
+        text-align: center;
+      }
+    
+      article p {
+        padding-left: 60px;
+      }
 
+      .asides {
+        float: right;
+        margin-left: 20px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.815);
+        border-radius: 10px;
+        color: white;
+      }
+    
+      .asides h2 {
+        text-align: center;
+      }
+    
+      .asides li {
+        margin-bottom: 5px;
+      }
+    }
+  
  
   /* Médio IPHONE 6/7/8 */
 
