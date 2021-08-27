@@ -50,7 +50,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 :ballot_box_with_check: 4-5: _Projeto - Playground Functions_
 
   
-### Bloco 5: Javascript: DOM, Eventos e Web Storage
+### Bloco 5: [Javascript: DOM, Eventos e Web Storage]
 
 :ballot_box_with_check: 5-1: _JavaScript - DOM e seletores_
 
@@ -71,7 +71,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 :ballot_box_with_check: 5-7: _Projeto Bônus - Carta Misteriosa_
 
 
-### Bloco 6: HTML & CSS avançado
+### Bloco 6: [HTML & CSS avançado]
 
 :ballot_box_with_check: _HTML & CSS - Forms_
 
