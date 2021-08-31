@@ -1,4 +1,5 @@
 # Parte II
+
 Para os exercícios a seguir, use o seguinte código.
 ```
 const lesson1 = {
