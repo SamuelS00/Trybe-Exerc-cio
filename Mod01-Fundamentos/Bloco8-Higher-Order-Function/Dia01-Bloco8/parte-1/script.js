@@ -1,3 +1,4 @@
+//exercicio 1
 const newEmployees = (func) => {
     const employees = {
       id1: func('Pedro Guerra'), // Nome: Pedro Guerra -> Chame sua função passando o nome Pedro Guerra como parâmetro, substituindo as aspas
@@ -10,4 +11,11 @@ const newEmployees = (func) => {
 const pessoaContratada = (nome) => {return { nome, Email: `${nome}@trybe.com`};
 }
 
-console.log(newEmployees(pessoaContratada));
+//exercicio 2 - Usado o Gabarito nessa resolução.
+const numberChecker = (myNumber, number) => myNumber === number;
+
+const lotteryResult = (myNumber, callback) => {
+  const number = Math.floor((Math.random() * 5) + 1);
+
+  return callback(myNumber, number) ? 'Lucky day, you won!' : 'Try Again!';
+};
