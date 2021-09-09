@@ -50,7 +50,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 :ballot_box_with_check: 4-5: _Projeto - Playground Functions_
 
   
-### Bloco 5: Javascript: DOM, Eventos e Web Storage
+### Bloco 5: [Javascript: DOM, Eventos e Web Storage]()
 
 :ballot_box_with_check: 5-1: _JavaScript - DOM e seletores_
 
@@ -71,29 +71,29 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 :ballot_box_with_check: 5-7: _Projeto Bônus - Carta Misteriosa_
 
 
-### Bloco 6: HTML & CSS avançado
+### Bloco 6: [HTML & CSS avançado]()
 
-:ballot_box_with_check:: 6-1: _HTML & CSS - Forms_
+:ballot_box_with_check:6-1: _HTML & CSS - Forms_
 
-:ballot_box_with_check:: 6-2: _Bibliotecas JavaScript e Frameworks CSS_
+:ballot_box_with_check: 6-2: _Bibliotecas JavaScript e Frameworks CSS_
 
-:ballot_box_with_check:: 6-3: _CSS Flexbox - Part 1_
+:ballot_box_with_check: 6-3: _CSS Flexbox - Part 1_
 
-:ballot_box_with_check:: 6-4: _CSS Flexbox - Part 2_
+:ballot_box_with_check: 6-4: _CSS Flexbox - Part 2_
 
-:ballot_box_with_check:: 6-5: _CSS Responsivo - Mobile First_
+:ballot_box_with_check: 6-5: _CSS Responsivo - Mobile First_
 
-:black_large_square: 6-6: _Projeto - Trybewarts_
+:ballot_box_with_check: _Projeto - Trybewarts_
 
-### Bloco 7: JavaScript ES6 & Testes Unitários
+### Bloco 7: [JavaScript ES6 & Testes Unitários]()
 
-:black_large_square: 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
+:ballot_box_with_check: 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
 
-:black_large_square: 7-2: _JavaScript ES6 - Objects_
+:ballot_box_with_check: 7-2: _JavaScript ES6 - Objects_
 
-:black_large_square: 7-3: _Testes unitários em JavaScript_
+:ballot_box_with_check: 7-3: _Testes unitários em JavaScript_
 
-:black_large_square: 7-4: _Projeto - JavaScript Testes Unitários_
+:ballot_box_with_check: 7-4: _Projeto - JavaScript Testes Unitários_
 
 
 ### Bloco 8: Higher Order Functions do JavaScript ES6
