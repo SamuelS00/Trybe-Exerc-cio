@@ -134,5 +134,3 @@ function fantasyOrScienceFictionAuthors() {
 }
 
 assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult);
-
-// Exercicio 6
