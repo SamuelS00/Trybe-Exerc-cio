@@ -103,3 +103,36 @@ function fantasyOrScienceFiction() {
 }
 
 assert.deepStrictEqual(fantasyOrScienceFiction(), expectedResult);
+
+// Exercicio 4
+
+function oldBooksOrdered() {
+  const filtrado = books.filter((book) => {
+    if(book.releaseYear + 60 < 2021) {
+      return true;
+    }
+    return false;
+  })
+  
+  return filtrado.sort((book1, book2) => book1.releaseYear - book2.releaseYear);
+}
+
+assert.deepStrictEqual(oldBooksOrdered(), expectedResult);
+
+// Exercicio 5
+
+const expectedResult = [
+  'Frank Herbert',
+  'George R. R. Martin',
+  'Isaac Asimov',
+  'J. R. R. Tolkien',
+];
+
+function fantasyOrScienceFictionAuthors() {
+  const genero = books.filter((book) => book.genre === "Fantasia" || book.genre === "Ficção Científica")
+  return genero.map((book) => book.author.name).sort();
+}
+
+assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult);
+
+// Exercicio 6
