@@ -1,4 +1,4 @@
-// Exerecicio 6
+// xerecicio 6
 
 const assert = require("assert");
 
