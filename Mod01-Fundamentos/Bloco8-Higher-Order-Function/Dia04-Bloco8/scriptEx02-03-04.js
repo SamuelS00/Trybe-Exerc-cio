@@ -63,4 +63,47 @@ const books = [
   },
 ];
 
-// Adicione o código do exercício aqui:
+// Exercicio 2 
+
+const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
+
+function reduceNames() {
+    return books.reduce((acumulador, interado) => `${acumulador}, ${interado.author.name}`, '').concat(".").replace(", ", " ").trim() 
+}
+
+assert.strictEqual(reduceNames(), expectedResult);
+
+// Exercicio 3
+
+const expectedResult = 43;
+
+function averageAge() {
+  function media (valor) {
+    const index = books.length;
+    return valor/index;
+  };
+  return media(books.reduce((acumulador, interado) => acumulador + (interado.releaseYear - interado.author.birthYear), 0))
+};
+
+assert.strictEqual(averageAge(), expectedResult);
+
+// Exercicio 4
+
+const expectedResult = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
+};
+
+function longestNamedBook() {
+  return books.reduce((acumulador, interado) => acumulador.length < interado.name.length ? acumulador = interado : acumulador, [])
+}
+
+assert.deepStrictEqual(longestNamedBook(), expectedResult);
+
+
