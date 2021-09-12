@@ -77,6 +77,7 @@ const getPosition = (latitude, longitude) => ({
 
 console.log(getPosition(-19.8157, -43.9542));
 ```
+Default Parametrs 
 
 Para praticar, escreva uma função multiply que multiplique dois números passados como argumentos. Atribua como default o valor 1 caso não seja passado nenhum valor como segundo parâmetro.
 ```
@@ -85,4 +86,4 @@ const multiply = (number, value) => {
 };
 
 console.log(multiply(8));
-```
+```const multiply = (number, value) => {
