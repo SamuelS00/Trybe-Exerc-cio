@@ -34,3 +34,17 @@ console.log(comida, animal, bebida); // arroz gato água
 
 [comida, animal, bebida] = [bebida, comida, animal]; 
 console.log(comida, animal, bebida);
+
+// Exercicio 3
+
+let numerosPares = [1, 3, 5, 6, 8, 10, 12];
+
+console.log(numerosPares); // [6, 8, 10, 12];
+
+// Utilize array destructuring para produzir o resultado esperado pelo console.log abaixo
+
+const pares = numerosPares.filter((numero) => numero % 2 === 0)
+
+numerosPares = [...pares]
+
+console.log(numerosPares)
