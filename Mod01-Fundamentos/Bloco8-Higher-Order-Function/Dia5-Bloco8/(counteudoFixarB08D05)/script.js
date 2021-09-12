@@ -76,3 +76,9 @@ const getPosition = (latitude, longitude) => ({
 });
 
 console.log(getPosition(-19.8157, -43.9542));
+
+// Default Parameters 
+
+const multiply = (number = 1, value = 1) => number * value ;
+
+console.log(multiply(8, 2));
