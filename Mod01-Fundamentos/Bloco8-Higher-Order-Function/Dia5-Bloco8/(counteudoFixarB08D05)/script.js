@@ -48,3 +48,22 @@ const pares = numerosPares.filter((numero) => numero % 2 === 0)
 numerosPares = [...pares]
 
 console.log(numerosPares)
+
+// Default Destructuring 
+
+const getNationality = ({ firstName, nationality = 'Brazilian'}) => `${firstName} is ${nationality}`;
+
+const person = {
+  firstName: 'João',
+  lastName: 'Jr II',
+};
+
+const otherPerson = {
+  firstName: 'Ivan',
+  lastName: 'Ivanovich',
+  nationality: 'Russian',
+};
+
+
+console.log(getNationality(otherPerson)); // Ivan is Russian
+console.log(getNationality(person));
