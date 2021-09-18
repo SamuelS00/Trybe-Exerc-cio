@@ -91,11 +91,13 @@ const getMarsTemperature = () => {
   return Math.floor(Math.random() * maxTemperature);
 };
 
-const sendMarsTemperature = (callback) => {
+const sendMarsTemperature = () => {
   const temperature = getMarsTemperature();
   const menssage = `Mars temperature is: ${temperature} degree Celsius`
-  console.log(menssage)
-  setTimeout(() => menssage, messageDelay());
+  setTimeout(() => console.log(menssage), messageDelay());
 }
 
-sendMarsTemperature(getMarsTemperature());
+sendMarsTemperature();
+
+// Exercicio 5
+
