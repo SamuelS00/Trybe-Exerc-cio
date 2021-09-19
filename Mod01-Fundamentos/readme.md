@@ -96,28 +96,28 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 :ballot_box_with_check: 7-4: _Projeto - JavaScript Testes Unitários_
 
 
-### Bloco 8: Higher Order Functions do JavaScript ES6
+### Bloco 8: [Higher Order Functions do JavaScript ES6]()
 
-:black_large_square:8-1: _JavaScript ES6 - Introdução Higher Order Functions_
+:ballot_box_with_check: 8-1: _JavaScript ES6 - Introdução Higher Order Functions_
 
-:black_large_square: 8-2: _JavaScript ES6 - Higher Order Functions - forEach, find, some, every, sort_
+:ballot_box_with_check: 8-2: _JavaScript ES6 - Higher Order Functions - forEach, find, some, every, sort_
 
-:black_large_square: 8-3: _JavaScript ES6 - Higher Order Functions - map e filter_
+:ballot_box_with_check: 8-3: _JavaScript ES6 - Higher Order Functions - map e filter_
 
-:black_large_square: 8-4: _JavaScript ES6 - Higher Order Functions - reduce_
+:ballot_box_with_check: 8-4: _JavaScript ES6 - Higher Order Functions - reduce_
 
-:black_large_square: 8-5: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
+:ballot_box_with_check: 8-5: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
 
-:black_large_square: 8-5: _Projeto - Zoo functions_
+:ballot_box_with_check: 8-5: _Projeto - Zoo functions_
 
 
-### Bloco 9: Javascript Assíncrono e Promises
+### Bloco 9: [Javascript Assíncrono e Promises]()
 
-:black_large_square: 9-1: _JavaScript Assíncrono e Callbacks_
+:ballot_box_with_check: 9-1: _JavaScript Assíncrono e Callbacks_
 
-:black_large_square: 9-2: _JavaScript Promises_
+:ballot_box_with_check: 9-2: _JavaScript Promises_
 
-:black_large_square: 9-3: _Projeto - Carrinho de Compras_
+:ballot_box_with_check: 9-3: _Projeto - Carrinho de Compras_
 
 
 ### Bloco 10: Testes automatizados com Jest
