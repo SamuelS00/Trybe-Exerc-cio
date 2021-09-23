@@ -1,4 +1,4 @@
-const sum = require("./script.js")
+const sum = require("./sum.js")
 
 describe("verifica a soma de dois números inteiros", () => {
     it("verifica se a soma de 4 + 5 é 9",() => {
