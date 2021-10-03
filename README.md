@@ -111,7 +111,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 :ballot_box_with_check: 8-5: _Projeto - Zoo functions_
 
 
-### Bloco 9: Javascript Assíncrono e Promises
+### Bloco 9: [Javascript Assíncrono e Promises]()
 
 :ballot_box_with_check: 9-1: _JavaScript Assíncrono e Callbacks_
 
@@ -120,7 +120,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 :ballot_box_with_check: 9-3: _Projeto - Carrinho de Compras_
 
 
-### Bloco 10: Testes automatizados com Jest
+### Bloco 10: [Testes automatizados com Jest]()
 
 :ballot_box_with_check: 10-1: _Primeiros passos no Jest_
 
