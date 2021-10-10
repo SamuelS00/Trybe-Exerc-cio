@@ -36,7 +36,7 @@ render() {
         ))}
     </div>
     );
-}
+  }
 }
 
 export default Content;
