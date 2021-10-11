@@ -3,15 +3,15 @@ import './App.css';
 
 
 function handleClick() {
-  console.log('Clicou no botão 1')
+  console.log('Clicou no botão 1');
 }
 
 function handleClick2() {
-  console.log('Clicou no botão! 2')
+  console.log('Clicou no botão! 2');
 }
 
 function handleClick3() {
-  console.log('Clicou no botão! 3')
+  console.log('Clicou no botão! 3');
 }
 class App extends React.Component {
   
