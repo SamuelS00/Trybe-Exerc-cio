@@ -1,6 +1,8 @@
 import React from "react";
 import Option from './Option'
 import Name from './Name'
+import Email from './Email'
+import Cpf from "./Cpf";
 
 class Form extends React.Component {
   render() {
@@ -38,8 +40,8 @@ class Form extends React.Component {
       <form>
         <fieldset>
           <Name />
-          <input type="email" placeholder="Email" />
-          <input type="number" placeholder="CPF" />
+          <Email />
+          <Cpf />
           <input type="text" placeholder="Endereço" />
           <input type="text" placeholder="Cidade" />
           <select name="select">
