@@ -1,26 +1,60 @@
 import React from "react";
+import Option from './Option'
+import Name from './Name'
 
 class Form extends React.Component {
   render() {
+    const states = [
+        ['AC', 'Acre'],
+        ['AL', 'Alagoas'],
+        ['AP', 'Amapá'],
+        ['AM', 'Amazonas'],
+        ['BA', 'Bahia'],
+        ['CE', 'Ceará'],
+        ['DF', 'Distrito Federal'],
+        ['ES', 'Espírito Santo'],
+        ['GO', 'Goías'],
+        ['MA', 'Maranhão'],
+        ['MT', 'Mato Grosso'],
+        ['MS', 'Mato Grosso do Sul'],
+        ['MG', 'Minas Gerais'],
+        ['PA', 'Pará'],
+        ['PB', 'Paraíba'],
+        ['PR', 'Paraná'],
+        ['PE', 'Pernambuco'],
+        ['PI', 'Piauí'],
+        ['RJ', 'Rio de Janeiro'],
+        ['RN', 'Rio Grande do Norte'],
+        ['RS', 'Rio Grande do Sul'],
+        ['RO', 'Rondônia'],
+        ['RR', 'Roraíma'],
+        ['SC', 'Santa Catarina'],
+        ['SP', 'São Paulo'],
+        ['SE', 'Sergipe'],
+        ['TO', 'Tocantins'],
+    ]
+
     return (
       <form>
         <fieldset>
-          <input type="text" placeholder="Nome" />
+          <Name />
           <input type="email" placeholder="Email" />
           <input type="number" placeholder="CPF" />
-          <input type="text" placeholder="endereço" />
-          <input type="text" placeholder="endereço" />
-          { }
-          <div>
-            <label for="residenciaCasa">Casa: </label>
+          <input type="text" placeholder="Endereço" />
+          <input type="text" placeholder="Cidade" />
+          <select name="select">
+            {states.map((state => <Option state={ state } />))}
+          </select>
+          <div >
+            <label htmlFor="residenciaCasa">Casa: </label>
             <input
               type="radio"
               name="residencia"
               value="casa"
               id="residenciaCasa"
             />
-        
-            <label for="residenciaApartamento">Apartamento: </label>
+
+            <label htmlFor="residenciaApartamento">Apartamento: </label>
             <input
               type="radio"
               name="residencia"
