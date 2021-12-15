@@ -3,7 +3,7 @@ import Option from './Option'
 import Name from './Name'
 import Email from './Email'
 import Cpf from "./Cpf";
-
+import Endereco from "./Endereco";
 class Form extends React.Component {
   render() {
     const states = [
@@ -42,7 +42,7 @@ class Form extends React.Component {
           <Name />
           <Email />
           <Cpf />
-          <input type="text" placeholder="Endereço" />
+          <Endereco />
           <input type="text" placeholder="Cidade" />
           <select name="select">
             {states.map((state => <Option state={ state } />))}
