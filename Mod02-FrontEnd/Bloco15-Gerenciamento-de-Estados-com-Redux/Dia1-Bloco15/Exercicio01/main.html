@@ -28,9 +28,10 @@
   </head>
   <body>
     <div id="container">
-      <p>Color: <span id="value">white</span></p>
+      <p id="paragraph" >Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
+      <button id="random"> Random Color </button>
     </div>
     <script>
       const ESTADO_INICIAL = {
@@ -42,19 +43,24 @@
 
       const nextColor = (cor) => ({ type: "NEXT_COLOR" })
 
+      const randomColor = (cor) => ({ type: "RANDOM_COLOR" })
+
       const handleButtons = () => {
         const buttonPrev = document.querySelector('#previous');
         const buttonNext = document.querySelector('#next');
+        const buttonRandom = document.querySelector('#random')
         
         buttonPrev.addEventListener('click', () => { store.dispatch(previusColor())})
         buttonNext.addEventListener('click', () => { store.dispatch(nextColor())})
-      
+        buttonRandom.addEventListener('click', () => { store.dispatch(randomColor())})
+  
       }
 
       handleButtons()
 
     
       const reducer = (state = ESTADO_INICIAL, action) => {
+        // console.log(index)
         switch(action.type) { 
           case "PREVIUS_COLOR":
             return {
@@ -66,6 +72,12 @@
             return {
               ...state,
               index: state.index === state.colors.length - 1 ? 0 : state.index + 1
+            }
+          
+          case "RANDOM_COLOR" : 
+            return {
+              ...state,
+              index: Math.floor(Math.random() * 6)
             }
           
           default: 
@@ -80,7 +92,12 @@
 
         const text = document.querySelector('#value')
         const container = document.querySelector('#container')
-
+        const paragraph = document.querySelector('#paragraph')
+        
+        paragraph.style.color = index === 1 
+          ? paragraph.style.color = "white" 
+          : paragraph.style.color = "black"
+        
         text.innerHTML = colors[index]
         container.style.backgroundColor = colors[index];
       }
