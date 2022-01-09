@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        height: 50px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p id="paragraph" >Color: <span id="value">white</span></p>
+      <button id="previous">Previous color</button>
+      <button id="next">Next color</button>
+      <button id="random"> Random Color </button>
+    </div>
+    <script>
+      const ESTADO_INICIAL = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      }; 
+     
+      const previusColor = () => ({ type: "PREVIUS_COLOR"})
+
+      const nextColor = () => ({ type: "NEXT_COLOR" })
+
+      const randomColor = () => ({ type: "RANDOM_COLOR" })
+
+      const handleButtons = () => {
+        const buttonPrev = document.querySelector('#previous');
+        const buttonNext = document.querySelector('#next');
+        const buttonRandom = document.querySelector('#random')
+        
+        buttonPrev.addEventListener('click', () => { store.dispatch(previusColor())})
+        buttonNext.addEventListener('click', () => { store.dispatch(nextColor())})
+        buttonRandom.addEventListener('click', () => { store.dispatch(randomColor())})
+  
+      }
+
+      handleButtons()
+
+    
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        // console.log(index)
+        switch(action.type) { 
+          case "PREVIUS_COLOR":
+            return {
+              ...state,
+              index: state.index === 0 ? state.colors.length - 1 : state.index - 1
+            }
+
+          case "NEXT_COLOR" : 
+            return {
+              ...state,
+              index: state.index === state.colors.length - 1 ? 0 : state.index + 1
+            }
+          
+          case "RANDOM_COLOR" : 
+            return {
+              ...state,
+              index: Math.floor(Math.random() * 6)
+            }
+          
+          default: 
+            return state;
+        }
+      }
+
+      const store = Redux.createStore(reducer)
+      
+      const makeColor = () => {
+        const { colors, index } = store.getState()
+
+        const text = document.querySelector('#value')
+        const container = document.querySelector('#container')
+        const paragraph = document.querySelector('#paragraph')
+        
+        paragraph.style.color = index === 1 
+          ? paragraph.style.color = "white" 
+          : paragraph.style.color = "black"
+        
+        text.innerHTML = colors[index]
+        container.style.backgroundColor = colors[index];
+      }
+
+      store.subscribe(() => makeColor())
+
+      console.log(store.getState(), store.subscribe(() => console.log(store.getState())))
+    </script>
+  </body>
+</html>
