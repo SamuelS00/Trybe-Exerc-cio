@@ -140,37 +140,37 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ☑️ 11-2: _Componentes React_
 
-☑️: 11-3: _Projeto - Movie Cards Library_
+☑️ 11-3: _Projeto - Movie Cards Library_
 
  
 ### Bloco 12: [Componentes com Estado, Eventos e Formulários com React]()
 
-☑️ _Components com estado e eventos_
+☑️ 12-1: _Components com estado e eventos_
 
 ☑️ 12-2: _Formulários no React_
 ☑️ 12-3: _Projeto - Movie Cards Library Stateful_
 
 ### Bloco 13: Ciclo de Vida de Componentes e React Router
 
-:black_large_square: 13-1: _Ciclo de vida de componentes_
-:black_large_square: 13-2: _React Router_
+☑️ 13-1: _Ciclo de vida de componentes_
+☑️ 13-2: _React Router_
 
-:black_large_square: 13-3: _Projeto - Movie Cards Library CRUD_
+☑️ 13-3: _Projeto - Movie Cards Library CRUD_
 
 
 ### Bloco 14: Metodologias ágeis
 
-:black_large_square: 14-1: _Metodologias ágeis_
+☑️ 14-1: _Metodologias ágeis_
 
-:black_large_square: 14-2: _Projeto - Frontend Online Store_
+☑️ 14-2: _Projeto - Frontend Online Store_
 
 ### Bloco 15: Testes automatizados com React Testing Library
 
-:black_large_square: 15-1: _RTL - Primeiros Passos_
+☑️ _RTL - Primeiros Passos_
 
-:black_large_square: 15-2: _RTL - Mocks e Inputs_
+☑️ _RTL - Mocks e Inputs_
 
-:black_large_square: 15-2: _RTL: Testando com React Router_
+☑️ _RTL: Testando com React Router_
 
 :black_large_square: 15-3: _Projeto - Testes em React_
 
