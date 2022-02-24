@@ -1,100 +1,37 @@
-# Para Fixar
+# Agora a Prática
 
-A tabela a seguir é um guia de como a classificação indicativa é usada no banco de dados sakila . Consulte-a ao fazer os desafios propostos.
+1 - Escreva uma query para exibir todas as peças que começam com GR.
 
-### WHERE, AND, IS, NULL.
+    SELECT * FROM Pecas
+    WHERE name LIKE 'GR%';
 
-```
-G = permitido para todos
-PG = permitido para crianças menores de 13 anos
-PG-13 = permitido para pessoas com mais de 13 anos
-R = permitido para pessoas com mais de 17 anos
-NC-17 = permitido apenas para adultos
-```
+2 - Escreva uma query para exibir todos os fornecimentos que contenham a peça com code 2 . Organize o resultado por ordem alfabética de fornecedor.
 
-Entre no banco de dados sakila e siga as instruções (e guarde as queries para conferir posteriormente):
+    SELECT * FROM Fornecimentos
+    WHERE peca = 2
+    ORDER BY Fornecedor ASC;
 
-1 - Precisamos identificar os dados do cliente com o e-mail LEONARD.SCHOFIELD@sakilacustomer.org . As informações podem ser encontradas na tabela customer
+3 - Escreva uma query para exibir as peças, preço e fornecedor de todos os fornecimentos em que o código do fornecedor tenha a letra N.
 
-    R: USE sakila;
-    SELECT * FROM customer
-    WHERE email = 'LEONARD.SCHOFIELD@sakilacustomer.org';
+    SELECT peca, preco, fornecedor FROM Fornecimentos
+    WHERE fornecedor LIKE '%N%';
 
-2 - Precisamos de um relatório dos nomes dos clientes, em ordem alfabética , que não estão mais ativos no nosso sistema e pertencem à loja com o id = 2 , e não inclua o cliente KENNETH no resultado. As informações podem ser encontradas na tabela customer
+4 - Escreva uma query para exibir todas as informações dos fornecedores que são empresas limitadas (LTDA). Ordene os resultados em ordem alfabética decrescente.
 
-    USE sakila;
-    SELECT first_name FROM customer
-    WHERE active IS NOT NULL 
-    AND store_id = 2
-    AND first_name NOT LIKE 'KENNETH';
+    SELECT * FROM Fornecedores
+    WHERE name LIKE '%LTDA' ORDER BY name DESC;
 
-3 - O setor financeiro quer saber título, descrição, ano de lançamento e valor do custo de substituição ( replacement_cost ), dos 100 filmes com o maior custo de substituição, do valor mais alto ao mais baixo, entre os filmes feitos para menores de idade e que têm o custo mínimo de substituição de $18,00 dólares. Em caso de empate, ordene em ordem alfabética pelo título. As informações podem ser encontradas na tabela film
+5 - Escreva uma query para exibir o número de empresas (fornecedores) que contém a letra F no código.
 
-    SELECT title, description, release_year, replacement_cost, rating FROM film
-    WHERE rating <> 'NC-17' AND replacement_cost >= 18.00
-    ORDER BY replacement_cost DESC, title LIMIT 100;
+    SELECT COUNT(*) FROM Fornecedores
+    WHERE code LIKE '%F%';
 
-4 - Quantos clientes estão ativos e na loja 1 ? As informações podem ser encontradas na tabela customer
+6 - Escreva uma query para exibir os fornecimentos onde as peças custam mais de R$15,00 e menos de $40,00. Ordene os resultados por ordem crescente.]
 
-    SELECT COUNT(*) FROM customer
-    WHERE active = 1 AND store_id = 1;
+    SELECT * FROM Fornecimentos
+    WHERE preco BETWEEN 15 AND 40 ORDER BY preco;
 
+7 - Escreva uma query para exibir o número de vendas feitas entre o dia 15/04/2018 e o dia 30/07/2019.
 
-5 - Mostre todos os detalhes dos clientes que não estão ativos na loja 1 . As informações podem ser encontradas na tabela customer
-
-    USE sakila;
-    SELECT * FROM customer
-    WHERE active = 0 AND store_id = 1;
-
-6 - Precisamos descobrir quais são os 50 filmes feitos apenas para adultos com a menor taxa de aluguel, para que possamos fazer uma divulgação melhor desses filmes. Em caso de empate, ordene em ordem alfabética pelo título. As informações podem ser encontradas na tabela film
-
-    USE sakila;
-    SELECT title FROM film
-    WHERE rating = 'NC-17'
-    ORDER BY rental_rate, title
-    LIMIT 50;
-
-## LIKE
-
-1 - Mostre todos os detalhes dos filmes que contêm a palavra ace no nome.
-
-    SELECT * FRON filme
-    WHERE title LIKE '%plu%';
-
-2 - Mostre todos os detalhes dos filmes cujas descrições finalizam com china. 
-
-    SELECT * FROM filme
-    WHERE description LIKE '%china';
-
-3 - Mostre todos os detalhes dos dois filmes cujas descrições contêm a palavra girl e o título finaliza com a palavra lord. 
-
-    USE sakila;
-    SELECT * FROM film
-    WHERE description LIKE '%girl%' AND title LIKE '%lord';
-
-4 - Mostre os dois casos em que, a partir do 4° caractere no título do filme, tem-se a palavra gon. 
-
-    USE sakila;
-    SELECT * FROM film
-    WHERE title LIKE '___gon%';
-
-5 - Mostre o único caso em que, a partir do 4° caractere no título do filme, tem-se a palavra gon e a descrição contém a palavra Documentary. 
-
-    USE sakila;
-    SELECT * FROM film
-    WHERE title LIKE '___gon%' AND description LIKE '%Documentary%';
-
-6 - Mostre os dois filmes cujos títulos ou finalizam com academy ou iniciam com mosquito. 
-
-    USE sakila;
-    SELECT * FROM film
-    WHERE title LIKE '%academy' OR title LIKE 'mosquito%';
-
-7 - Mostre os seis filmes que contêm as palavras monkey e sumo em suas descrições.
-
-    USE sakila;
-    SELECT * FROM film
-    WHERE description LIKE '%monkey%' AND description LIKE '%sumo%';
-
-
-
+    SELECT COUNT(*) FROM Vendas
+    WHERE DATE(order_date) BETWEEN '2018-04-15' AND '2019-07-30';
