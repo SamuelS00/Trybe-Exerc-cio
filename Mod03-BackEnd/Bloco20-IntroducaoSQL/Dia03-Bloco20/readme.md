@@ -2,6 +2,8 @@
 
 A tabela a seguir é um guia de como a classificação indicativa é usada no banco de dados sakila . Consulte-a ao fazer os desafios propostos.
 
+### WHERE, AND, IS, NULL.
+
 ```
 G = permitido para todos
 PG = permitido para crianças menores de 13 anos
@@ -51,4 +53,48 @@ Entre no banco de dados sakila e siga as instruções (e guarde as queries para 
     WHERE rating = 'NC-17'
     ORDER BY rental_rate, title
     LIMIT 50;
+
+## LIKE
+
+1 - Mostre todos os detalhes dos filmes que contêm a palavra ace no nome.
+
+    SELECT * FRON filme
+    WHERE title LIKE '%plu%';
+
+2 - Mostre todos os detalhes dos filmes cujas descrições finalizam com china. 
+
+    SELECT * FROM filme
+    WHERE description LIKE '%china';
+
+3 - Mostre todos os detalhes dos dois filmes cujas descrições contêm a palavra girl e o título finaliza com a palavra lord. 
+
+    USE sakila;
+    SELECT * FROM film
+    WHERE description LIKE '%girl%' AND title LIKE '%lord';
+
+4 - Mostre os dois casos em que, a partir do 4° caractere no título do filme, tem-se a palavra gon. 
+
+    USE sakila;
+    SELECT * FROM film
+    WHERE title LIKE '___gon%';
+
+5 - Mostre o único caso em que, a partir do 4° caractere no título do filme, tem-se a palavra gon e a descrição contém a palavra Documentary. 
+
+    USE sakila;
+    SELECT * FROM film
+    WHERE title LIKE '___gon%' AND description LIKE '%Documentary%';
+
+6 - Mostre os dois filmes cujos títulos ou finalizam com academy ou iniciam com mosquito. 
+
+    USE sakila;
+    SELECT * FROM film
+    WHERE title LIKE '%academy' OR title LIKE 'mosquito%';
+
+7 - Mostre os seis filmes que contêm as palavras monkey e sumo em suas descrições.
+
+    USE sakila;
+    SELECT * FROM film
+    WHERE description LIKE '%monkey%' AND description LIKE '%sumo%';
+
+
 
