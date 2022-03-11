@@ -174,64 +174,64 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ☑️ 15-3: _RTL: Testando com React Router_
 
-:black_large_square: 15-3: _Projeto - Testes em React_
+☑️ 15-3: _Projeto - Testes em React_
 
 
-### Bloco 16: Introdução ao Redux
+### Bloco 16: [Introdução ao Redux]()
 
-:black_large_square: 16-1: _Introdução ao Redux - O estado global da aplicação_
+☑️ 16-1: _Introdução ao Redux - O estado global da aplicação_
 
-:black_large_square: 16-2: _Usando o Redux no React_
+☑️ 16-2: _Usando o Redux no React_
 
-:black_large_square: 16-3: _Usando o Redux no React - Prática_
+☑️ 16-3: _Usando o Redux no React - Prática_
 
-:black_large_square: 16-4: _Usando o Redux no React - Actions Assíncronas_
+☑️ 16-4: _Usando o Redux no React - Actions Assíncronas_
 
-:black_large_square: 16-5: _Testes em React-Redux_
+☑️ 16-5: _Testes em React-Redux_
 
-:black_large_square:16-6: _Projeto - Trybe Wallet_
+☑️16-6: _Projeto - Trybe Wallet_
   
 
-### Bloco 17: Projeto React
+### Bloco 17: [Projeto React]()
 
-:black_large_square: 17-1: _Projeto - Jogo de Trivia_
-
-
-### Bloco 18: Context API & Reack Hooks
-
-:black_large_square: 18-1: _Context API do React_
-
-:black_large_square: 18-2: _React Hooks - useState e useContext_
-
-:black_large_square: 18-3: _React Hooks - useEffect e Hooks customizados_
-
-:black_large_square: 18-4: _Projeto - StarWars Datatable com Context API e Hooks_
+☑️ 17-1: _Projeto - Jogo de Trivia_
 
 
-### Bloco 19: Projeto Final de Front-end
+### Bloco 18: [Context API & Reack Hooks]()
 
-:black_large_square: 19-1: _Projeto - App de Receitas_
+☑️ 18-1: _Context API do React_
+
+☑️ 18-2: _React Hooks - useState e useContext_
+
+☑️ 18-3: _React Hooks - useEffect e Hooks customizados_
+
+☑️ 18-4: _Projeto - StarWars Datatable com Context API e Hooks_
+
+
+### Bloco 19: [Projeto Final de Front-end]()
+
+☑️ 19-1: _Projeto - App de Receitas_
 
 
 ## Desenvolvimento Back-end :hourglass_flowing_sand:
 
 
-### Bloco 20: Introdução - SQL
+### Bloco 20: [Introdução - SQL]()
 
-:black_large_square: 20-1: _Banco de dados SQL_
+☑️ 20-1: _Banco de dados SQL_
 
-:black_large_square: 20-2: _Encontrando dados em um banco de dados_
+☑️ 20-2: _Encontrando dados em um banco de dados_
 
-:black_large_square: 20-3: _Filtrando dados de forma especí­fica_
+☑️ 20-3: _Filtrando dados de forma especí­fica_
 
-:black_large_square: 20-4: _Manipulando tabelas_
+☑️ 20-4: _Manipulando tabelas_
 
-:black_large_square: 20-5: _Projeto - All For One_
+☑️ 20-5: _Projeto - All For One_
 
  
-### Bloco 21: Funções SQL, Joins e Subqueries
+### Bloco 21: [Funções SQL, Joins e Subqueries]()
 
-:black_large_square: 21-1: _Funções mais usadas no SQL_
+☑️ 21-1: _Funções mais usadas no SQL_
 
 :black_large_square: 21-2: _Descomplicando JOINs, UNIONs e Subqueries_
 
