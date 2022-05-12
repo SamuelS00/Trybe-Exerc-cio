@@ -62,3 +62,6 @@
 
         docker container rm 3f6fccd41358
 
+13. [BÔNUS] Crie e rode de modo interativo em modo 'Cleanup', a imagem andrius/ascii-patrol.
+
+        docker container run --rm andrius/ascii-patrol
