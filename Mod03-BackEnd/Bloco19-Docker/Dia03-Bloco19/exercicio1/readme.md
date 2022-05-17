@@ -62,5 +62,3 @@ Vamos aprimorar nossos conhecimentos sobre images e volumes, para isso:
 11. Depois de obter o IMAGE ID, exclua a imagem.
 
          docker image rm a8ea074f4566 
-
-
