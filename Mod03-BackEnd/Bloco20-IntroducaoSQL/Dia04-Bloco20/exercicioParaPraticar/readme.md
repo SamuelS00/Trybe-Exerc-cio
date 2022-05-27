@@ -17,7 +17,7 @@ Para saber quais campos são obrigatórios, clique com o botão direito na tabel
     VALUES
     ('Carlos', 'Pereira', 2, 'pereiracarlos@gmail.com', 1, 1, 'PereiraCarlos', 'asdmfksmd'),
     ('José', 'Silva', 2, 'josésilva@gmail.com', 1, 1, 'Js', 'dskmds'); 
-
+.
 3 - Selecione os cinco primeiros nomes e sobrenomes da tabela sakila.customer e cadastre essas pessoas como atores na tabela sakila.actor.
 
     INSERT INTO sakila.actor(first_name, last_name)
