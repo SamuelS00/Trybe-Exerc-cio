@@ -26,4 +26,5 @@ const calculaImc = () => {
     console.log(`IMC: ${ imc }, ESTADO: ${ RESULT }`);
 } 
 
-calculaImc();
+module.exports = { calculaImc };
+
