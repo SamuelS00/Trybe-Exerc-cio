@@ -40,20 +40,50 @@ const readSimpsonsWithoutId10And6 = async(id) => {
 };
 
 const readAndWrite = async() => {
-   try {
+    try {
         const result = await fs.readFile('simpsons.json', 'utf-8');
         const resultParse = JSON.parse(result);
         const personWthId1And4 = resultParse.filter((p) => p.id == 1 || p.id == 4);
+
         const resultStringfy = JSON.stringify(personWthId1And4);
-        const resultWrite = await fs.writeFile('./simpsonFamily.json', resultStringfy);
+        const resultWrite = await fs.writeFile('simpsonFamily.json', resultStringfy);
 
         console.log(resultWrite);
-   } catch(err) {
+    } catch(err) {
         console.log(err);
-   };
+    };
+};
+
+const writeSimpsonsFamily = async(person) => {
+  try {
+    const result = await fs.readFile('simpsonFamily.json', 'utf-8');  // await ta esperando para colocar o retorno na variavel
+    const resultParse = JSON.parse(result);
+    const resultJoin = [...person, ...resultParse];
+
+    const resultStringfy = JSON.stringify(resultJoin);
+    await fs.writeFile('simpsonFamily.json', resultStringfy); 
+
+  } catch(err) {
+    console.log(err);
+  }
+};
+
+const wrireNelsonInSimpsonsFamily = async () => {
+    try {
+        const result = await fs.readFile('simpsons.json', 'utf-8');
+        const resultParse = JSON.parse(result);
+
+        const filterNelson = resultParse.filter((p) => p.name == 'Nelson Muntz');
+        
+        writeSimpsonsFamily(filterNelson)
+
+    } catch (err) {
+        console.log(err)
+    };
 };
 
 // readSimpsons();
 // readSimpsonsById(2);
-// readSimpsonsWithoutId10And6()
+// readSimpsonsWithoutId10And6(); 
 // readAndWrite();
+// wrireNelsonInSimpsonsFamily();
