@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 
 const calculaSituacao = require('./calculaSituacao');
-const writeFile = require('./writeFile');
+const writeFile = require('../writeFile');
 
 sinon.stub(fs, 'writeFileSync').returns('ok');
 
