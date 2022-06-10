@@ -4,6 +4,7 @@ const { writeFile } = require('fs');
 const app = express();
 const bodyParser = require('body-parser');
 const generateToken = require('../Ex-07-Authorization/aurithozation');
+const { nextTick } = require('process');
 
 app.use(bodyParser.json());
 
@@ -51,10 +52,29 @@ app.post('/simpsons', async(req, res) => {
    res.status(204).end();
 });
 
-app.get('/signup', (req, res) => {
-  const { token } = 
-     
-  res.status(200).json({ message: 'palmeiras' })
+
+function validToken(req, res, next) {
+  const token = generateToken();
+
+  req.headers.authorization = token;
+
+  next();
+}
+
+app.get('/signup', validToken, (req, res) => {
+  const { authorization: { token }} = req.headers;
+
+  const { email, password, firstName, phone} = req.body;
+
+  if(!email || !password || !firstName || !phone ) {
+    res.status(401).json({ message: 'missing fiels'})
+  }
+  
+  if(!token || token === '') {
+     res.status(401).json({ message: 'Token inválido!' });
+  } 
+
+  res.status(200).json({ message: 'ok!'});
 });
 
 app.listen(3001, () => {
