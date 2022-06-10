@@ -3,6 +3,8 @@ const express = require('express');
 const { writeFile } = require('fs');
 const app = express();
 const bodyParser = require('body-parser');
+const generateToken = require('../Ex-07-Authorization/aurithozation');
+
 app.use(bodyParser.json());
 
 function getSimpsons () {
@@ -47,6 +49,12 @@ app.post('/simpsons', async(req, res) => {
    await setSimpsons(simpsons);
 
    res.status(204).end();
+});
+
+app.get('/signup', (req, res) => {
+  const { token } = 
+     
+  res.status(200).json({ message: 'palmeiras' })
 });
 
 app.listen(3001, () => {
