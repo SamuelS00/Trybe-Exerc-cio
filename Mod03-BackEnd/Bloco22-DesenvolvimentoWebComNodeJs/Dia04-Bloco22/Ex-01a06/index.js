@@ -1,4 +1,3 @@
-
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -23,9 +22,12 @@ app.post('/greetings', function(req, res) {
 });
 
 app.put('/users/:name/:age'), function(req, res) {
-  const { name: nameUser, age: ageUser } = req.params;
 
-  res.status(200).json({ "message": `Seu nome é ${nameUser} e você tem ${ageUser} anos de idade` })
+  console.log(req.params);
+
+  const { name , age } = req.params;
+
+  res.status(204).json({ message: `Seu nome é ${ name } e você tem ${ age } anos de idade` })
 }
 
 app.listen(3001, () => {

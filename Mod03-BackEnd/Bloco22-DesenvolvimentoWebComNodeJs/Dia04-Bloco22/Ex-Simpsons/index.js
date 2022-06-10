@@ -47,7 +47,7 @@ app.post('/simpsons', async(req, res) => {
    await setSimpsons(simpsons);
 
    res.status(204).end();
-})
+});
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
