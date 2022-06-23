@@ -1,4 +1,4 @@
-const connection = require('./connection');
+const connection = require('../helpers/connection');
 
 const getNewAuthor = ({id, firstName, middleName, lastName}) => {
     const fullName = [firstName, middleName, lastName]
