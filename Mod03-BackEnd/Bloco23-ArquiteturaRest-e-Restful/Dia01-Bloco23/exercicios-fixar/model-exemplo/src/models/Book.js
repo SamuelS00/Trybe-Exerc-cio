@@ -1,19 +1,19 @@
 const connection = require('./connection');
 
-const getNewBookAndAuthor = ({id, title, firstName, middleName, lastName}) => {
+const getNewBookAndAuthor = ({book_id, title, firstName, middleName, lastName}) => {
     const author = [firstName, middleName, lastName]
         .filter(Boolean)
         .join(' ');
 
     return {
-    id,
+    book_id,
     title,
     author,
     };
 };
 
 const serialize = (bookData) => ({
-	id: bookData.id,
+	book_id: bookData.id,
     title: bookData.title,
 	firstName: bookData.first_name,
 	middleName: bookData.middle_name,
@@ -30,6 +30,19 @@ const getAll = async () => {
     return books.map(serialize).map(getNewBookAndAuthor);
 };
 
+const getByAuthorId = async (id) => {
+    const [booksByAuthor] = await connection.execute(
+        `SELECT b.id, b.title, at.first_name, at.middle_name, at.last_name 
+        FROM books AS b
+        INNER JOIN authors AS at
+        ON b.author_id = at.id
+        WHERE at.id = ?;`
+    , [id]);
+
+    return booksByAuthor.map(serialize).map(getNewBookAndAuthor);
+}
+
 module.exports = {
-    getAll
+    getAll,
+    getByAuthorId
 }
