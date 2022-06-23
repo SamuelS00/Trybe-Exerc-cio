@@ -18,7 +18,7 @@ const serialize = (authorData) => ({
 	id: authorData.id,
 	firstName: authorData.first_name,
 	middleName: authorData.middle_name,
-	lastName: authorData.last_name});
+	lastName: authorData.last_name });
 
 const getAll = async () => {
 	const [authors] = await connection.execute(
