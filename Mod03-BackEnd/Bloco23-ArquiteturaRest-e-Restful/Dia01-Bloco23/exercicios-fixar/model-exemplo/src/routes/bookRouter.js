@@ -1,7 +1,9 @@
 const express = require('express');
+const { findById } = require('../models/Author');
 const router = express.Router();
 
 const Books = require('../models/Book');
+const Author = require('../models/Author');
 
 router.get('/search', async(req, res) => {
     const { name } = req.query;
@@ -27,6 +29,20 @@ router.get('/:id', async(req, res) => {
    const booksByAuthor = await Books.getByAuthorId(id);
 
    res.status(200).json(booksByAuthor);
+});
+
+router.post('/', async (req, res) => {
+   const { title, author_id } = req.body;
+
+    const authors = await Author.findById(author_id);
+    
+    if(!authors) {
+       return res.status(400).json({ message: 'Dados inválidos'});
+    }
+    
+   await Books.create(title, author_id);
+
+   res.status(201).json({ message: 'Livro criado com sucesso!'})
 });
 
 module.exports = router;

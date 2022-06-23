@@ -1,4 +1,4 @@
-const connection = require('./connection');
+const connection = require('../helpers/connection');
 
 const getNewBookAndAuthor = ({book_id, title, firstName, middleName, lastName}) => {
     const author = [firstName, middleName, lastName]
@@ -40,9 +40,16 @@ const getByAuthorId = async (id) => {
     , [id]);
 
     return booksByAuthor.map(serialize).map(getNewBookAndAuthor);
-}
+};
+
+const create = async (title, author_id) => {
+    const query = 'INSERT INTO model_example.books (title, author_id) VALUES (?,?)'
+
+    connection.execute(query, [title, author_id]);
+};
 
 module.exports = {
     getAll,
-    getByAuthorId
-}
+    getByAuthorId,
+    create,
+};
