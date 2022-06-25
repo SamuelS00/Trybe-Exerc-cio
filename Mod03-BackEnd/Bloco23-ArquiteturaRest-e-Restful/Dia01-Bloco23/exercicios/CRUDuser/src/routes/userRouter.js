@@ -10,13 +10,25 @@ router.get('/', async (req, res) => {
   res.status(200).json(users);
 });
 
+router.get('/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const user = await UserModel.findById(id);
+
+  if(!user) {
+    return res.status(404).json({ error: true, message: 'Usuário não encontrado'});
+  }
+
+  res.status(200).json(user)
+});
+
 router.post('/', async (req, res) => {
   const { first_name, last_name, email, password } = req.body;
 
   const isError = UserValidate.isNewUserValid(first_name, last_name, email, password);
 
   if(isError.error) {
-    return res.status(400).json({ message: isError.message});
+    return res.status(400).json({ error: true, message: isError.message});
   } 
 
   const id = await UserModel.create(first_name, last_name, email, password); 
@@ -29,7 +41,7 @@ router.post('/', async (req, res) => {
     password
   }
 
-  res.status(200).json(newUser);
+  res.status(201).json(newUser);
 });
 
 module.exports = router;
