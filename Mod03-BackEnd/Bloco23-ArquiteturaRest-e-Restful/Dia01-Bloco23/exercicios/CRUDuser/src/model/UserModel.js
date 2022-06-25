@@ -16,6 +16,19 @@ const findById = async (id) => {
    return user;
 }
 
+const update = async (id, first_name, last_name, email, password) => {
+   const query = (
+      `UPDATE user_example.users 
+      SET first_name = ?,
+      last_name = ?,
+      email = ?,
+      password = ?
+      WHERE id = ?;`
+   );
+
+   await connection.execute(query, [first_name, last_name, email, password, id]);
+}
+
 const create = async (first_name, last_name, email, password) => {
    const query = ( 
     'INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?);'
@@ -30,4 +43,5 @@ module.exports = {
    getAll,
    create,
    findById,
+   update,
 }
