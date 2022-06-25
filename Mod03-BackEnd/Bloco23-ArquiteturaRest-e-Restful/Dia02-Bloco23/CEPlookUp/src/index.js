@@ -6,7 +6,7 @@ const PORT = process.env.PORT;
 const app = express();
 const bodyParser = require('body-parser');
 
-const cepRouter = require('./models/cepRouter');
+const cepRouter = require('./routes/cepRouter');
 app.use('/cep', cepRouter);
 
 app.use(bodyParser.json());
