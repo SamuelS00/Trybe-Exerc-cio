@@ -1,6 +1,12 @@
 const httpsStatusCode = require('../helpers/httpsStatusCode');
 
 const ErrorHandler = (err, _req, res, _next) => {
+    if(err.isJoi) {
+        console.log(err, 'erro do joi');
+        return res.status(err.statusCode)
+            .json({ error: { message: err.message }})
+    }
+    
     if(err.statusCode) {
         return res.status(err.statusCode).json({ message: err.message });
     };
