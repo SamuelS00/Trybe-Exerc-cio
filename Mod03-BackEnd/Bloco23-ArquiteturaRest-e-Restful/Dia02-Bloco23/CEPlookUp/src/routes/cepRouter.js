@@ -11,4 +11,6 @@ router.get('/ping', (req, res) => {
 
 router.get('/:cep', rescue(CepController.findCepAddress));
 
+router.post('/', rescue(CepController.createCepAddress));
+
 module.exports = router;
