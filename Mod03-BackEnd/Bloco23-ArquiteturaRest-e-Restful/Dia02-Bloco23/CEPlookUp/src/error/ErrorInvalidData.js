@@ -1,6 +1,6 @@
 const httpsStatusCode = require('../helpers/httpsStatusCode');
 
-const invalidParams = (message) => {
+const invalidData = (message) => {
     return {
         message, 
         statusCode: httpsStatusCode.BAD_REQUEST,
@@ -8,4 +8,4 @@ const invalidParams = (message) => {
     };
 };
 
-module.exports = invalidParams;
+module.exports = invalidData;
