@@ -1,18 +1,20 @@
-const express = require('express');
-
 require('dotenv').config();
-const PORT = process.env.PORT;
+
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const ErrorHandler = require('./middleware/ErrorHandler');
+const cepRouter = require('./routes/cepRouter');
 
 const app = express();
 
-const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const cepRouter = require('./routes/cepRouter');
-const ErrorHandler = require('./middleware/ErrorHandler');
 app.use('/cep', cepRouter);
 
 app.use(ErrorHandler);
+
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
     console.log(`rodando na porta ${PORT}`)
