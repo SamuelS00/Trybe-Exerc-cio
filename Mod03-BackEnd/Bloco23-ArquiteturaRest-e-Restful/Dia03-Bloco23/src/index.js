@@ -2,13 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const productsRouter = require('./routes/productsRouter');
 const ErrorHandler = require('./middleware/ErrorHandler');
+const rescue = require('express-rescue');
+// Doc 
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('../swagger_output.json')
 
 const app = express();
 app.use(express.json());
-
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/products', productsRouter);
+app.use('/products', rescue(productsRouter));
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use(ErrorHandler);
 
