@@ -32,7 +32,7 @@ const getById = async (id) => {
 const update = async (id, name, brand) => {
   const isValidId = await validateId(id);
   const { error } = validateBody(name, brand)
-  
+
   if(isValidId) throw invalidData(INVALID_PRODUCT_ID(id));
   if(error) throw invalidData(error.message);
 
