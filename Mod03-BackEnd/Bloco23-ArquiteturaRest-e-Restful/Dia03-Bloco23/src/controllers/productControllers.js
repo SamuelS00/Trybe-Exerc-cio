@@ -42,9 +42,9 @@ const update = async (req, res, next) => {
     const { id } = req.params;
     const { name, brand } = req.body;
   
-    await ProductService.update(id, name, brand);
+    const updatedProduct = await ProductService.update(id, name, brand);
   
-    res.status(httpsStatusCode.OK).json({ data: { id, name, brand }});
+    res.status(httpsStatusCode.OK).json({ data: updatedProduct});
   } catch (err) {
     next(err);
   }
