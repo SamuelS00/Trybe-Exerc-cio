@@ -1,7 +1,5 @@
 const Joi = require('joi');
 
-const invalidData = require('../errors/invalidData');
-
 const productSchema = Joi.object({
   name: Joi.string().min(2).required(),
   brand: Joi.string().min(2).required(),
@@ -9,8 +7,9 @@ const productSchema = Joi.object({
 
 const validateBody = (name, brand) => {
   const { error } = productSchema.validate({ name, brand });
+  if(error) return { error };
 
-  if(error) throw invalidData(error.message);
+  return { error: false };
 };
 
 module.exports = validateBody;
