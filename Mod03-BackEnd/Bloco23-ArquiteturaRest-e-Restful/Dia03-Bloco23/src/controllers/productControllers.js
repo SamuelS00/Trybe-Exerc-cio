@@ -2,46 +2,64 @@ const ProductModel = require('../models/productModel');
 const ProductService = require('../services/productServices');
 const httpsStatusCode = require('../helpers/httpsStatusCode');
 
-// add as validações na camada service;
-
 // add swagger for node
 
 const add = async (req, res, next) => {
-  const { name, brand } = req.body;
+  try {
+    const { name, brand } = req.body;
 
-  const newProduct = await ProductService.add(name, brand);
-
-  res.status(httpsStatusCode.CREATED).json({ data: { newProduct }});
+    const newProduct = await ProductService.add(name, brand);
+  
+    res.status(httpsStatusCode.CREATED).json({ data: { newProduct }});
+  } catch (err) {
+    next(err);
+  }
 };
 
-const getAll = async (_req, res, _next) => {
-  const products = await ProductService.getAll();
+const getAll = async (_req, res, next) => {
+  try {
+    const products = await ProductService.getAll();
 
-  res.status(httpsStatusCode.OK).json({ data: products });
+    res.status(httpsStatusCode.OK).json({ data: products });
+  } catch (err) {
+    next(err)
+  }
 };
 
-const getById = async (req, res, _next) => {
-  const { id } = req.params;
-  const product = await ProductService.getById(id);
-
-  res.status(httpsStatusCode.OK).json({ data: { product }});
+const getById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const product = await ProductService.getById(id);
+  
+    res.status(httpsStatusCode.OK).json({ data: { product }});
+  } catch(err) {
+    next(err);
+  }
 };
 
 const update = async (req, res, next) => {
-  const { id } = req.params;
-  const { name, brand } = req.body;
-
-  await ProductModel.update(id, name, brand);
-
-  res.status(httpsStatusCode.OK).json({ data: { id, name, brand }});
+  try {
+    const { id } = req.params;
+    const { name, brand } = req.body;
+  
+    await ProductService.update(id, name, brand);
+  
+    res.status(httpsStatusCode.OK).json({ data: { id, name, brand }});
+  } catch (err) {
+    next(err);
+  }
 };  
 
 const exclude = async (req, res, next) => {
-  const { id } = req.params;
+  try {
+    const { id } = req.params;
 
-  await ProductService.exclude(id);
-
-  res.status(httpsStatusCode.NO_CONTENT).end();
+    await ProductService.exclude(id);
+  
+    res.status(httpsStatusCode.NO_CONTENT).end();
+  } catch (err) {
+    next(err)
+  }
 };
 
 module.exports = { add, getAll, getById, update, exclude };
