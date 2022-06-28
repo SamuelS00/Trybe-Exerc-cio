@@ -39,11 +39,14 @@ const getById = async (id) => {
 
 const update = async (id, name, brand) => {
   try {
-    const [result] = await connection.query(
+    await connection.query(
       'UPDATE rest_exercicios.products SET name = ?, brand = ? WHERE id = ?',
        [name, brand, id],
     );
-    return result;
+
+    const updatedProduct = { id, name, brand };;
+
+    return updatedProduct;
   } catch (err) {
     console.error(err);
     return process.exit(1);
