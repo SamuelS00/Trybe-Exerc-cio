@@ -31,7 +31,7 @@ const getById = async (req, res, next) => {
     const { id } = req.params;
     const product = await ProductService.getById(id);
   
-    res.status(httpsStatusCode.OK).json({ data: { product }});
+    res.status(httpsStatusCode.OK).json({ data: product });
   } catch(err) {
     next(err);
   }
@@ -44,7 +44,7 @@ const update = async (req, res, next) => {
   
     const updatedProduct = await ProductService.update(id, name, brand);
   
-    res.status(httpsStatusCode.OK).json({ data: updatedProduct});
+    res.status(httpsStatusCode.OK).json({ data: updatedProduct });
   } catch (err) {
     next(err);
   }
