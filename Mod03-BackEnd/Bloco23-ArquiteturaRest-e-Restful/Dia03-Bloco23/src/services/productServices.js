@@ -3,7 +3,6 @@ const validateBody = require('../helpers/validateBody');
 const validateId = require('../helpers/validateId');
 
 const invalidData = require('../errors/invalidData');
-
 const INVALID_PRODUCT_ID = (id) => `there is no product with id ${id}`
 
 const add = async (name, brand) => {
