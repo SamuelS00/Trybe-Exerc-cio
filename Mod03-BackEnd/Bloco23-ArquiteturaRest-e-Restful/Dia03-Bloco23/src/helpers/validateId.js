@@ -1,9 +1,10 @@
 const ProductModel = require('../models/productModel');
 
 const validateId = async (id) => {
-  const product = await ProductModel.getById(id);
+  const { products } = await ProductModel.getAll();
+  const productById = products.find((p) => p.id === Number(id))
 
-  if(!product.length) return true;
+  if(!productById) return true;
 
   return false;
 };
