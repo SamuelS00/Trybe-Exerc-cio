@@ -16,4 +16,15 @@ const create = async (title, author, pageQuantity) => {
   return newBook;
 };
 
-module.exports = { getAllBooks, getByIdBook, create };
+const update = async (id, title, author, pageQuantity) => {
+  const [updatedBook] = await Book.update(
+    { title, author, pageQuantity },
+    { where: { id }},
+  );
+
+  if(!updatedBook) return { message: 'Book not found'};
+
+  return { message: 'Book updated successfully'}
+};
+
+module.exports = { getAllBooks, getByIdBook, create, update };
