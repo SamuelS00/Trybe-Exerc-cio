@@ -13,4 +13,11 @@ const getByIdBook = async (req, res, _next) => {
   return res.status(200).json(book)
 };
 
-module.exports = { getAllBooks, getByIdBook };
+const create = async (req, res, _next) => {
+  const { title, author, pageQuantity } = req.body;
+  const newBook = await bookController.create(title, author, pageQuantity);
+
+  return res.status(201).json(newBook);
+};
+
+module.exports = { getAllBooks, getByIdBook, create };
