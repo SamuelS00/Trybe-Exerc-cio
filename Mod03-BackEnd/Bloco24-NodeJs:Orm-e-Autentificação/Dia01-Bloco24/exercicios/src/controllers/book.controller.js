@@ -6,4 +6,11 @@ const getAllBooks = async (req, res, _next) => {
   return res.status(200).json(books);
 };
 
-module.exports = { getAllBooks };
+const getByIdBook = async (req, res, _next) => {
+  const { id } = req.params;
+  const book = await bookController.getByIdBook(id);
+
+  return res.status(200).json(book)
+};
+
+module.exports = { getAllBooks, getByIdBook };
