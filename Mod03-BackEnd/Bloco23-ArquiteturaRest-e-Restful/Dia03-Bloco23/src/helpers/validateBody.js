@@ -6,9 +6,11 @@ const productSchema = Joi.object({
 });
 
 const validateBody = (name, brand) => {
-  const { error } = productSchema.validate({ name, brand });
+  if(!name && !brand) return { error: { message: 'Dados Inválidos'}}
 
-  if(error) return error;
+  const result = productSchema.validate({ name, brand });
+
+  if(result.error) return result;
 
   return { error: false };
 };
