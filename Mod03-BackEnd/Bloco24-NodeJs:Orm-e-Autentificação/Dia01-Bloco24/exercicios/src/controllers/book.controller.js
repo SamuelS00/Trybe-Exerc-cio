@@ -28,4 +28,11 @@ const update = async (req, res, _next) => {
   return res.status(201).json(response.message);
 };
 
-module.exports = { getAllBooks, getByIdBook, create, update };
+const destroy = async (req, res, _next) => {
+  const { id } = req.params;
+  const response = await bookController.destroy(id);
+
+  return res.status(200).json(response.message);
+}
+
+module.exports = { getAllBooks, getByIdBook, create, update, destroy };
