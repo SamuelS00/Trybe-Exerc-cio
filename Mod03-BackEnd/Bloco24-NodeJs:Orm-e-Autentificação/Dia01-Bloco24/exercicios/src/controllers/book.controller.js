@@ -13,6 +13,13 @@ const getByIdBook = async (req, res, _next) => {
   return res.status(200).json(book)
 };
 
+const getByAuthor = async (req, res, _next) => {
+  const { author } = req.query;
+  const books = await bookController.getByAuthor(author);
+  
+  return res.status(200).json(books);
+};
+
 const create = async (req, res, _next) => {
   const { title, author, pageQuantity } = req.body;
   const newBook = await bookController.create(title, author, pageQuantity);
@@ -33,6 +40,13 @@ const destroy = async (req, res, _next) => {
   const response = await bookController.destroy(id);
 
   return res.status(200).json(response.message);
-}
+};
 
-module.exports = { getAllBooks, getByIdBook, create, update, destroy };
+module.exports = {
+  getAllBooks,
+  getByIdBook,
+  create,
+  update,
+  destroy,
+  getByAuthor 
+};

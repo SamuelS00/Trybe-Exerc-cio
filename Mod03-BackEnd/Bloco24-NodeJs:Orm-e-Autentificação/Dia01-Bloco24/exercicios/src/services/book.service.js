@@ -1,4 +1,5 @@
 const {Book} = require('../database/models/index');
+const { Op } = require("sequelize");
 
 const getAllBooks = async () => {
   const books = await Book.findAll();
@@ -8,6 +9,11 @@ const getAllBooks = async () => {
 const getByIdBook = async (id) => {
   const book = await Book.findByPk(id);
   return book;
+};
+
+const getByAuthor = async (author) => {
+  const books = await Book.findAll({ where: { author: author }});
+  return books;
 };
 
 const create = async (title, author, pageQuantity) => {
@@ -35,4 +41,11 @@ const destroy = async (id) => {
    return { message: 'Book successfully deleted'}
 };
 
-module.exports = { getAllBooks, getByIdBook, create, update, destroy };
+module.exports = {
+  getAllBooks,
+  getByIdBook,
+  create,
+  update,
+  destroy,
+  getByAuthor 
+};
