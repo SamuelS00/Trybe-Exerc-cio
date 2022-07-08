@@ -21,16 +21,16 @@ const getByAuthor = async (req, res, _next) => {
 };
 
 const create = async (req, res, _next) => {
-  const { title, author, pageQuantity } = req.body;
-  const newBook = await bookController.create(title, author, pageQuantity);
+  const { title, author, pageQuantity, publisher } = req.body;
+  const newBook = await bookController.create(title, author, pageQuantity, publisher);
 
   return res.status(201).json(newBook);
 };
 
 const update = async (req, res, _next) => {
   const { id } = req.params;
-  const { title, author, pageQuantity } = req.body;
-  const response = await bookController.update(id, title, author, pageQuantity);
+  const { title, author, pageQuantity, publisher} = req.body;
+  const response = await bookController.update(id, title, author, pageQuantity, publisher);
 
   return res.status(201).json(response.message);
 };

@@ -1,5 +1,4 @@
 const {Book} = require('../database/models/index');
-const { Op } = require("sequelize");
 
 const getAllBooks = async () => {
   const books = await Book.findAll();
@@ -12,19 +11,22 @@ const getByIdBook = async (id) => {
 };
 
 const getByAuthor = async (author) => {
-  const books = await Book.findAll({ where: { author: author }});
+  const books = await Book.findAll({ 
+      where: { author: author }, 
+      order: [['title', 'ASC']]
+    });
   return books;
 };
 
-const create = async (title, author, pageQuantity) => {
-  const newBook = await Book.create({ title, author, pageQuantity });
+const create = async (title, author, pageQuantity, publisher) => {
+  const newBook = await Book.create({ title, author, pageQuantity, publisher });
 
   return newBook;
 };
 
-const update = async (id, title, author, pageQuantity) => {
+const update = async (id, title, author, pageQuantity, publisher) => {
   const [updatedBook] = await Book.update(
-    { title, author, pageQuantity },
+    { title, author, pageQuantity, publisher },
     { where: { id }},
   );
 
