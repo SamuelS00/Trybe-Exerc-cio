@@ -10,15 +10,23 @@ const getByIdBook = async (id) => {
   return book;
 };
 
-const create = async (title, author, pageQuantity) => {
-  const newBook = await Book.create({ title, author, pageQuantity });
+const getByAuthor = async (author) => {
+  const books = await Book.findAll({ 
+      where: { author: author }, 
+      order: [['title', 'ASC']]
+    });
+  return books;
+};
+
+const create = async (title, author, pageQuantity, publisher) => {
+  const newBook = await Book.create({ title, author, pageQuantity, publisher });
 
   return newBook;
 };
 
-const update = async (id, title, author, pageQuantity) => {
+const update = async (id, title, author, pageQuantity, publisher) => {
   const [updatedBook] = await Book.update(
-    { title, author, pageQuantity },
+    { title, author, pageQuantity, publisher },
     { where: { id }},
   );
 
@@ -35,4 +43,11 @@ const destroy = async (id) => {
    return { message: 'Book successfully deleted'}
 };
 
-module.exports = { getAllBooks, getByIdBook, create, update, destroy };
+module.exports = {
+  getAllBooks,
+  getByIdBook,
+  create,
+  update,
+  destroy,
+  getByAuthor 
+};
