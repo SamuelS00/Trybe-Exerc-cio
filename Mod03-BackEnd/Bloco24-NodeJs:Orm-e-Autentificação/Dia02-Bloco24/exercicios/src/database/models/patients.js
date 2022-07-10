@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Patient = sequelize.define('Patients', {
-    patient_id: {  type: DataTypes.INTEGER, primaryKey: true },
+    patient_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     fullname: DataTypes.STRING,
     plan_id: { type: DataTypes.INTEGER, foreignKey: true }
   },
@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Patient.associate = (models) => {
-    Patient.hasOne(models.Plan, { foreignKey: 'plan_id', as: 'plans'})
+    Patient.hasOne(models.Plans, { foreignKey: 'plan_id', as: 'plans'})
   };
 
   return Patient;
-}
+};

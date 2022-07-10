@@ -6,16 +6,13 @@ module.exports = (sequelize, _DataTypes) => {
     );
 
     PatientSurgerie.associate = (models) => {
-        models.Patient.belongsToMany(models.Surgerie, {
+        models.Patients.belongsToMany(models.Surgeries, {
             as: 'surgeries',
             through: PatientSurgerie,
             foreignKey: 'patient_id',
             otherKey: 'surgery_id',    
         });
-    };
-
-    PatientSurgerie.associate = (models) => {
-        models.Surgerie.belongsToMany(models.Patient, {
+        models.Surgeries.belongsToMany(models.Patients, {
             as: 'patients',
             through: PatientSurgerie,
             foreignKey: 'surgery_id',

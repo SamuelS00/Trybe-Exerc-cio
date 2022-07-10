@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Plan = sequelize.define('Plan', {
+  const Plan = sequelize.define('Plans', {
     plan_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     coverage: DataTypes.STRING,
     price: DataTypes.DOUBLE,
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Plan.associate = (models) => {
-    Plan.belongsTo(models.Patient, { foreingKey: 'plan_id', as: 'patients'})
+    Plan.belongsTo(models.Patients, { foreingKey: 'plan_id', as: 'patients'})
   };
 
   return Plan;
