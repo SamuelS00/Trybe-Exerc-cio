@@ -5,8 +5,8 @@ module.exports = {
     const PatientsTable = queryInterface.createTable("Patients", {
       patient_id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
+        autoIncrement: true,
         type: Sequelize.INTEGER,
       },
       fullname: {
