@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 
-app.use('/signin', authRouter);
+app.use('/login', authRouter);
 app.use('/users', userRouter);
 
 app.use(ErrorMiddleware);
