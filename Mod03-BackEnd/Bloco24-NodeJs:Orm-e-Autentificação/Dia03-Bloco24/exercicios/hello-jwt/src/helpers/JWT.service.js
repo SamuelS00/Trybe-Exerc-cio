@@ -5,7 +5,9 @@ const jwt = require('jsonwebtoken');
 const { JWT_SECRET } = process.env;
 
 const createToken = (user) => {
-    const token = jwt.sign({ data: { user } }, JWT_SECRET, {
+    const admin = user.username === 'admin' && user.password === 's3nh4S3gur4???'
+
+    const token = jwt.sign({ data: { user, admin } }, JWT_SECRET, {
       expiresIn: '60m',
       algorithm: 'HS256',
     });
