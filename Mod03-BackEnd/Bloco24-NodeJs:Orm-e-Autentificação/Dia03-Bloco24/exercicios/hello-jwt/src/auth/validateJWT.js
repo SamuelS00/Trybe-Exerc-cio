@@ -23,6 +23,22 @@ const validateToken = async (req, res, next) => {
     req.user = user;
 
     next();
+};
+
+const validateAdmin = async(req, res, next) => {
+  const token = req.headers['authorization'];
+
+  if(!token) return UnauthorizedError('Token não encontrado');
+
+  const decoded = jwt.verify(token, JWT_SECRET);
+
+  console.log(decoded);
+
+  if(!decoded.data.admin) {
+    return res.status(403).json({ message: 'Restricted access'});
+  };
+
+  next();
 }
 
-module.exports = validateToken;
+module.exports = { validateToken, validateAdmin };
