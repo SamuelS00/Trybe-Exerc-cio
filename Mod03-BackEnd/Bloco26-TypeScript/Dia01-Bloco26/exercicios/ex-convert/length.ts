@@ -1,7 +1,4 @@
-type scale = {
-   symbol: string,
-   valueInMeter: number; 
-};
+import { scale } from './type/scale';
 
 const lengthScaleM: Array<scale> = [
   { symbol: 'Km', valueInMeter: 1000 }, // 1000m
