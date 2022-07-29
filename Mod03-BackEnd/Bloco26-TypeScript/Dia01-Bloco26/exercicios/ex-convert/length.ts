@@ -1,11 +1,11 @@
-import { scale } from './type/scale';
+import { scale } from './types/scale';
 
 const lengthScaleM: Array<scale> = [
-  { symbol: 'Km', valueInMeter: 1000 }, // 1000m
+  { symbol: 'Km', valueInMeter: 1000 },
   { symbol: 'Hm', valueInMeter: 100 },
   { symbol: 'Dam', valueInMeter: 10 },
   { symbol: 'M', valueInMeter: 1 },
-  { symbol: 'Dm', valueInMeter: 0.1 },  // 0,01m
+  { symbol: 'Dm', valueInMeter: 0.1 },
   { symbol: 'Cm', valueInMeter: 0.01 },
   { symbol: 'Mm', valueInMeter: 0.001 }
 ];
