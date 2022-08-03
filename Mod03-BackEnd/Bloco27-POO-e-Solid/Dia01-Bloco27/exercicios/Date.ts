@@ -90,35 +90,14 @@ class Data {
   };
 
   format(legenda: string) {
-    switch (legenda) {
-      case DataFormat[1]: 
-        return `${this.getDay()}/${this.getMonth('mm')}/${this.ano}`;
-        break;
-      case DataFormat[2]: 
-        return `${this.getDay()}/${this.getMonth('mm')}/${this.getYear('aa')}`
-        break;
-      case DataFormat[3]: 
-        return `${this.ano}/${this.getMonth('mm')}/${this.getDay()}`
-        break;
-      case DataFormat[4]: 
-        return `${this.getYear('aa')}/${this.getMonth('mm')}/${this.getDay()}`
-        break
-      case DataFormat[5]: 
-        return `${this.getYear('aaaa')}-${this.getMonth('mm')}-${this.getDay()}`
-        break
-      case DataFormat[6]: 
-        return `${this.getYear('aa')}-${this.getMonth('mm')}-${this.getDay()}`
-        break
-      case DataFormat[7]: 
-        return `${this.getDay()} de ${this.getMonth('M')} de ${this.getYear('aa')}`
-        break
-      case DataFormat[8]: 
-        return `${this.getDay()}, ${this.getMonth('M')} de ${this.getYear('aaaa')}`
-        break
-      default: 
-        return this.getDate();
-    }
-  };
+    if(legenda.includes('aaaa')) legenda = legenda.replace('aaaa', `${this.getYear('aaaa')}`);
+    if(legenda.includes('aa')) legenda = legenda.replace('aa', `${this.getYear('aa')}`);
+    if(legenda.includes('dd')) legenda = legenda.replace('dd', `${this.getDay()}`);
+    if(legenda.includes('mm')) legenda = legenda.replace('mm', `${this.getMonth('mm')}`);
+    if(legenda.includes('M')) legenda = legenda.replace('M', `${this.getMonth('M')}`);
+  
+    return legenda;
+  }
 };
 
 const data = new Data(1, 2, 2021);
