@@ -1,4 +1,4 @@
-class Subject {
+export default class Subject {
   constructor(private name: string) { };
 
   private validateName(name: string): string | Error {

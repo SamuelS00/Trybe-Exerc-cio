@@ -1,6 +1,6 @@
-interface Employee {
-  registration: number;
+export default interface Employee {
+  registration: string;
   salary: number;
   admissionDate: Date;
-  generateRegistration(): string;
+  generateRegistration(n: number): string;
 }
