@@ -16,7 +16,7 @@ class Teacher extends Person implements Employee {
     subject: Subject
   ) {
     super(name, birthDate);
-    this.registration = this.generateRegistration(16);
+    this._registration = this.generateRegistration(16);
     this.salary = salary;
     this.admissionDate = admissionDate;
     this.subject = subject;
