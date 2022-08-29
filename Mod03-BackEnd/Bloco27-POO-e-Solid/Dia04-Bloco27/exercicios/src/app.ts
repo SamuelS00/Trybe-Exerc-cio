@@ -1,9 +1,10 @@
 import express from 'express';
-import plantUser from './routes/Plant.routes';
+import plantRouter from './routes/plants.router';
 
 const app = express();
 
 app.use(express.json());
-app.use('/plants', plantUser);
+
+app.use('/plants', plantRouter);
 
 export default app;
