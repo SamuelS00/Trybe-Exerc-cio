@@ -25,7 +25,6 @@
 
 ## Operadores Lógicos
 
-
 1. Selecione e faça a contagem dos restaurantes que não possuem avaliação **menor ou igual** a **5,** essa consulta também deve retornar restaurantes que não possuem o campo de avaliação.
    ```
    db.restaurants.countDocuments({ rating: { $not: { $lte: 5 } }});
@@ -53,6 +52,7 @@
    ```
 5. Selecione e faça a contagem dos resturantes em que a avaliação seja **maior** que **6** ou **menor** que **10,** **E** esteja localizado no bairro **Brooklyn** **OU** não possuem culinária do tipo  **Delicatessen**.
    ```
+
    db.restaurants.countDocuments({
      $and: [
        { $or: [{ rating: { $gt: 6, $lt: 10 } }] },
@@ -60,4 +60,30 @@
      ],
    });
 
+   ```
+
+## Método sort()
+
+1. Ordene alfabeticamente os restaurantes pelo nome (atributo `name`).
+
+   ```
+
+   db.restaurants.find({}, { name: 1, rating: 1}).sort({ name: 1 }).pretty();
+   ```
+2. Ordene os restaurantes de forma decrescente baseado nas avaliações.
+
+   ```
+   db.restaurants.find({}, { name: 1, rating: 1}).sort({ rating: -1 }).pretty();
+   ```
+
+## Removendo documentos
+
+1. Remova o primeiro restaurante que possua culinária do tipo  **Ice Cream, Gelato, Yogurt, Ices** .
+   ```
+   db.restaurants.deleteOne({{ cuisine: { $in: ['Ice Cream', 'Gelato', 'Yogurt', 'Ices'] } } });
+
+   ```
+2. Remova todos os restaurantes que possuem culinária do tipo **American**
+   ```
+   db.restaurants.deleteMany({ cuisine: "American" });
    ```
