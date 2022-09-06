@@ -72,6 +72,10 @@ Após a execução do método `.find().pretty()` o resultado do filme `Batman` s
 
 ![Shell Image](https://assets.app.betrybe.com/back-end/mongodb/complex-updates/images/ex6-e57ad8e1f37acbdb8e0800474b9d44e4.png)
 
+```
+db.movies.updateOne({ title: 'Batman'}, { $addToSet: { category: 'action' }});
+```
+
 **Exercício 7:** Adicione a categoria `"90's"` aos filmes `Batman` e `Home Alone`.
 
 Após a execução do método `.find().pretty()`, o resultado do filme `Batman` e do filme `Home Alone` será parecido com o dessa imagem:
