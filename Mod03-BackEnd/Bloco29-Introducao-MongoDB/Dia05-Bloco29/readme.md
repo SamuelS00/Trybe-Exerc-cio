@@ -82,6 +82,12 @@ Após a execução do método `.find().pretty()`, o resultado do filme `Batman` 
 
 ![Shell Image](https://assets.app.betrybe.com/back-end/mongodb/complex-updates/images/ex7-447424764b48a989e6ccb1b9baa8c70d.png)
 
+```
+db.movies.updateMany(
+  { title: { $in: ['Batman', 'Home Alone'] }}, { $addToSet: { category: '90\'s' }}
+);
+```
+
 **Exercício 8:** Crie um *array* de documentos chamado `cast` para o filme `Home Alone` com os seguintes dados:
 
 Copiar
