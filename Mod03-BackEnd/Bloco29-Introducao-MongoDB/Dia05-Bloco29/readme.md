@@ -144,6 +144,15 @@ Após a execução do método `.find().pretty()`, o resultado do filme `Home Alo
 
 ![Shell Image](https://assets.app.betrybe.com/back-end/mongodb/complex-updates/images/ex9-17900f045cc4c5b86ddda2a3de475e4d.png)
 
+```
+db.movies.updateOne(
+  { title: 'Home Alone', 'cast.actor': 'Daniel Stern' }, 
+  { 
+    $set: { 'cast.$.character': 'Marv' },
+  },
+);
+```
+
 🚀 **Exercício 10:** Crie um *array* de documentos chamado `cast` para o filme `Batman` com os seguintes dados:
 
 Copiar
