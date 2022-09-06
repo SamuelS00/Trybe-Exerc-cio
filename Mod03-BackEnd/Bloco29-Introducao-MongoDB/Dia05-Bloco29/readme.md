@@ -110,6 +110,32 @@ Após a execução do método `.find().pretty()`, o resultado do filme `Home Alo
 
 ![Shell Image](https://assets.app.betrybe.com/back-end/mongodb/complex-updates/images/ex8-5e72173bf664e563fc58edb77f80c197.png)
 
+```
+db.movies.updateOne(
+  { title: 'Home Alone' }, 
+  { $push: { 
+      cast: {
+        $each: [
+          {
+            'actor': 'Macaulay Culkin',
+            'character': 'Kevin'
+          },
+          {
+            'actor': 'Joe Pesci',
+            'character': 'Harry'
+          },
+          {
+            'actor': 'Daniel Stern'
+          } 
+        ]
+      },
+    },
+  },
+  { upsert: true },
+);
+
+```
+
 🚀 **Exercício 9:** Adicione o campo `character` com o valor `Marv` ao *array* de `cast` em que o campo `actor` seja igual a `Daniel Stern` no filme `Home Alone`.
 
  **Dica** : [Leia aqui](https://docs.mongodb.com/manual/reference/operator/update/positional/) sobre o operador `$`.
