@@ -173,6 +173,29 @@ Após a execução do método `.find().pretty()`, o resultado do filme `Batman` 
 
 ![Shell Image](https://assets.app.betrybe.com/back-end/mongodb/complex-updates/images/ex10-aa8e2335f8f723259a6d6fb409584cc3.png)
 
+```
+db.movies.updateOne(
+  { title: 'Batman' }, 
+  { $push: { 
+      cast: {
+        $each: [
+          {
+            "character": "Batman"
+          },
+          {
+            "character": "Alfred"
+          },
+          {
+            "character": "Coringa"
+          }
+        ]
+      },
+    },
+  },
+  { upsert: true },
+);
+```
+
 **Exercício 11:** Produza três *querys* para o filme `Batman`:
 
 * Adicione o campo `actor`, que deve ser um *array* com o valor `Christian Bale`, ao *array* de `cast` em que o campo `character` seja igual a `Batman`;
