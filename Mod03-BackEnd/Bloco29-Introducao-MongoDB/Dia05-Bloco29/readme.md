@@ -49,6 +49,10 @@ db.movies.updateOne({ title: 'Batman' }, { $pop: { category: -1 }});
 
 Após a execução do método `.find().pretty()`, o resultado do filme `Batman` será parecido com o dessa imagem:
 
+```
+db.movies.updateOne({ title: 'Batman' }, { $pop: { category: -1 }});
+```
+
 ![Shell Image](https://assets.app.betrybe.com/back-end/mongodb/complex-updates/images/ex4-dfde1c0e79adc538f154db879909ac6e.png)
 
 🚀 **Exercício 5:** Remova o último elemento do *array* `category` do filme `Batman`.
