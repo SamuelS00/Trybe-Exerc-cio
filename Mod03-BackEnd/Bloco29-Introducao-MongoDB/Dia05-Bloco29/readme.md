@@ -19,6 +19,22 @@ Após a execução do método `.find().pretty()`, o resultado do filme `Batman` 
 
 ![Shell Image](https://assets.app.betrybe.com/back-end/mongodb/complex-updates/images/ex2-4e7e0964cd8a9a6c4d66620f2052d7f6.png)
 
+```
+db.movies.updateOne(
+  { title: 'Batman'},
+  { 
+    $push: { 
+      category: {
+        $each: [
+          category: 'villain',
+          category: 'comic-based',
+        ]
+      }
+    }
+  }
+)
+```
+
 🚀 **Exercício 3:** Remova a categoria `"action"` do filme `Batman`.
 
 Após a execução do método `.find().pretty()`, o resultado do filme `Batman` será parecido com o dessa imagem:
