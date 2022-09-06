@@ -247,3 +247,20 @@ db.movies.updateOne(
 Após a execução do método `.find().pretty()`, o resultado do filme `Batman` será parecido com o dessa imagem:
 
 ![Shell Image](https://assets.app.betrybe.com/back-end/mongodb/complex-updates/images/ex12-25309b91e380da91ebaf06655851da3e.png)
+
+```
+db.movies.updateOne(
+  {
+    title: 'Batman',
+    'cast.character': 'Batman',
+  },
+  {
+    $push: {
+      'cast.$.actor': {
+        $each: ['Michael Keaton', 'Val Kilmer', 'George Clooney'],
+        $sort: 1,
+      },
+    },
+  },
+);
+```
