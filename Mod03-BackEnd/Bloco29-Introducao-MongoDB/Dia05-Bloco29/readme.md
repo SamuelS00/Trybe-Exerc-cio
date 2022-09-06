@@ -208,6 +208,38 @@ Após a execução do método `.find().pretty()` o resultado do filme `Batman` s
 
 ![Shell Image](https://assets.app.betrybe.com/back-end/mongodb/complex-updates/images/ex11-3149adea4236b717af8668bd6bf164fe.png)
 
+```
+db.movies.updateOne(
+  {
+    title: "Batman",
+    "cast.character": "Batman",
+  },
+  {
+    $push: { "cast.$.actor": "Christian Bale" },
+  },
+);
+
+db.movies.updateOne(
+  {
+    title: "Batman",
+    "cast.character": "Alfred",
+  },
+  {
+    $push: { "cast.$.actor": "Michael Caine" },
+  },
+);
+
+db.movies.updateOne(
+  {
+    title: "Batman",
+    "cast.character": "Coringa",
+  },
+  {
+    $push: { "cast.$.actor": "Heath Ledger" },
+  },
+
+```
+
 🚀 **Exercício 12:** Adicione aos atores de `cast` do `character` `Batman` do filme `Batman` os valores `"Michael Keaton"`, `"Val Kilmer"` e `"George Clooney"`, e deixe o *array* em ordem alfabética.
 
  **Dica** : [Leia aqui](https://docs.mongodb.com/manual/reference/operator/update/positional/) sobre o operador `$`.
