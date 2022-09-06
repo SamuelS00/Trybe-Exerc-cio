@@ -41,6 +41,10 @@ Após a execução do método `.find().pretty()`, o resultado do filme `Batman` 
 
 ![Shell Image](https://assets.app.betrybe.com/back-end/mongodb/complex-updates/images/ex3-734d650ffb208e2560e330fe090adb60.png)
 
+```
+db.movies.updateOne({ title: 'Batman' }, { $pop: { category: -1 }});
+```
+
 🚀 **Exercício 4:** Remova o primeiro elemento do *array* `category` do filme `Batman`.
 
 Após a execução do método `.find().pretty()`, o resultado do filme `Batman` será parecido com o dessa imagem:
