@@ -54,3 +54,52 @@ trybe_course.append("Ciência da Computação")
 ```
  trybe_course[0] = "Fundamentos"
 ```
+
+**Exercício 6:** Um conjunto ou set pode ser inicializado utilizando-se também o método `set()`. Inicialize uma variável com essa função `var = set()` e adicione seu nome ao conjunto utilizando um dos métodos vistos acima. Depois, imprima a variável e confira se o retorno é: {‘seu_nome’}.
+
+```
+var = set()
+
+var.add("samuel")
+
+print(var)
+```
+
+**Exercício 7:** Insira no objeto uma nova propriedade com o nome de chave “recorrente” e o valor “Sim”. Em seguida, imprima o objeto no console.
+
+```
+info = {
+  "personagem": "Margarida",
+  "origem": "Pato Donald",
+  "nota": "Namorada do personagem principal nos quadrinhos do Pato Donald",
+}
+
+info.setdefault("recorrente", "Sim")
+
+print(info)
+```
+
+**Exercício 8:** Remova a propriedade cuja chave é “origem” e imprima o objeto no console.
+
+```
+info.pop(origem)
+
+print(info)
+```
+
+**Exercício 9:** Após uma consulta do banco de dados, temos linhas que contém nome, sobrenome e idade como: `"Thiago", "Nobre", 29`. Que estrutura vista anteriormente seria recomendada dado que após esta consulta somente exibimos estes valores?
+
+```
+tuple.
+```
+
+**Exercício 10:** Realizar a contagem de quantas vezes cada elemento aparece em uma sequência é uma técnica muito útil na solução de alguns problemas. Qual é a estrutura mais recomendada para o armazenamento desta contagem?
+
+```
+my_list = [20, 20, 1, 2];
+count_elements = {
+    20: 2,
+    1: 1,
+    2: 2
+}
+```
