@@ -1,12 +1,10 @@
 import random
 
-myList = [
-    "Neymar",
-    "Ronaldo",
-    "Messi",
-    "Rústico",
-    "lewandowski",
-]
+myList = list()
+
+with open("./myList.txt") as file:
+    for line in file:
+        myList.append(line)
 
 choice = random.choice(myList)
 
@@ -24,6 +22,8 @@ while attempts > 0:
     if word == choice:
         print(f"Congratulations, you got it right. the player was the {word}")
         break
+    elif attempts == 0:
+        print("Você perdeu.")
+        break
     else:
         print(f"Tente novamente, você ainda tem {attempts} tentativas.")
-        break
