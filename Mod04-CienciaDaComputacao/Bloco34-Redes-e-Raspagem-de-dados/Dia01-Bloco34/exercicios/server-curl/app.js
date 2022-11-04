@@ -43,6 +43,6 @@ app.use((err, req, res, next) => {
    next(err);
 });
 
-app.listen(3000, () => {
-    console.log("ouvindo na porta:", 3000)
+app.listen(8080, () => {
+    console.log("ouvindo na porta:", 8080)
 });
