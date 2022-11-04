@@ -1,0 +1,1 @@
+wget -i ./urls-wget-ex-2/url_trybe.txt

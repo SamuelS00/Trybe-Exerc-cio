@@ -1,0 +1,1 @@
+curl telnet://localhost:8085
