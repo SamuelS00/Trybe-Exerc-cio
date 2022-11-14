@@ -10,15 +10,15 @@ Vamos colocar tudo o que vimos até agora em prática.
 
 Copiar
 
-```python
-1defcontains_duplicate(numbers):
-2    numbers.sort()
-3    previous_number ='not a number';
-4for number in numbers:
-5if(previous_number == number):returnTrue
-6        previous_number = number
-7
-8returnFalse
+```pyhon
+def contains_duplicate(numbers):
+    numbers.sort()
+    previous_number = 'not a number';
+    for number in numbers:
+        if(previous_number == number): return True
+        previous_number = number
+
+    return False
 ```
 
 🚀 **Exercício 2** Suponha que se está escrevendo uma função para um jogo de batalha naval. Dado um array bidimensional com `n` linhas e `m` colunas, e um par de coordenadas `x` para linhas e `y` para colunas, o algoritmo verifica se há um navio na coordenada alvo. Por exemplo:
