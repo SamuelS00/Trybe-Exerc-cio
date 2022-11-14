@@ -1,0 +1,1 @@
+Documantation Option: https://www.selenium.dev/selenium/docs/api/rb/Selenium/WebDriver/Firefox/Options.html
