@@ -1,0 +1,8 @@
+multiply array;
+
+Complexidade de Tempo:
+    O(N) -> O tempo de execução desse algoritmo cresce de maneira linear;
+    
+Complexidade de Espaço:
+    O(1) -> Mesmo que a entrada de dados fosse crescendo
+            sua saída nunca ocuparia mais espaço, pois o retorno sempre será um número apenas;

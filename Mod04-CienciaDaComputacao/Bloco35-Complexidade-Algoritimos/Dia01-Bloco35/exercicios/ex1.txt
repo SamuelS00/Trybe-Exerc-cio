@@ -1,0 +1,7 @@
+contains duplicates funciton
+
+Complexidade do sort: é O(n log n)
+
+Complexidade de tempo: é O(N) o tempo de execução é proporcional ao valor de entrada. 
+
+Complexidade de espaço: é O(1) pois o retorno é constante retornando um boolean (True ou False).
