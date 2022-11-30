@@ -15,17 +15,14 @@ def shuffle_cards(arr):
     half = len(arr) // 2
     shuffle = []
 
-    first_half = [arr[i] for i in range(0, half)]
-    second_half = [arr[i] for i in range(half, len(arr))]
-
-    for i in range(0, half):
-        shuffle.append(first_half[i])
-        shuffle.append(second_half[i])
+    for i in range(half):
+        shuffle.append(arr[i])
+        shuffle.append(arr[half + i])
 
     return shuffle
 
 
-# complexidade espaço -> 2 * 3(n/2)
-# complexidade tempo -> 2 * (n/2) + n/2
+# complexidade espaço -> 2 + n
+# complexidade tempo -> O(n)
 
 print(shuffle_cards(cartas))
