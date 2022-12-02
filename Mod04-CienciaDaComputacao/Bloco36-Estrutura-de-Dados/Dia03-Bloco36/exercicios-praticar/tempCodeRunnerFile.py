@@ -1,0 +1,1 @@
+linked_list.insert_last(4)

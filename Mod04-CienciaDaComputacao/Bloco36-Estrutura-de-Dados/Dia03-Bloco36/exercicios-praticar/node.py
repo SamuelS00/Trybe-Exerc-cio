@@ -5,4 +5,4 @@ class Node:
         self.next = None
 
     def __str__(self):
-        return f"Node(value={self.value}, value={self.prev}, next={self.next})"
+        return f"Node(value={self.value}, prev={self.prev}, next={self.next})"
