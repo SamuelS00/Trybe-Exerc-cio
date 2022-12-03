@@ -26,6 +26,7 @@ class Stack:
 
         min_value = self.data.head_value
 
+        # O(n)
         while min_value.next is None:
             if min_value.next < min_value:
                 min_value = min_value.next
