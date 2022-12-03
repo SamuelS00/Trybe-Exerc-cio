@@ -1,9 +1,15 @@
 from linked_list_content import LinkedList
 
 
+class StackOverflow(Exception):
+    def __str__(self) -> str:
+        return "The Stack is Full"
+
+
 class Stack:
     def __init__(self):
         self.data = LinkedList()
+        self.limit = 5
 
     def size(self):
         return len(self.data)
@@ -12,7 +18,10 @@ class Stack:
         return not bool(self.size())
 
     def push(self, value):
-        self.data.insert_last(value)
+        if self.size() + 1 < self.limit:
+            self.data.insert_last(value)
+        else:
+            raise StackOverflow()
 
     def pop(self):
         if self.is_empty():
@@ -67,3 +76,13 @@ if __name__ == "__main__":
     #   next=Node(value=2, next=None)
     # )
     print(content_stack.min_value())
+
+    # saída: The Stack is Full
+    try:
+        content_stack.push(4)
+        content_stack.push(5)
+        content_stack.push(6)
+
+        # print(content_stack.data)
+    except StackOverflow as err:
+        print(err)
