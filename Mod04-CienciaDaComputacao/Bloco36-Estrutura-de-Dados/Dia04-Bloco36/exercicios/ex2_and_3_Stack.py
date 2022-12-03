@@ -20,6 +20,18 @@ class Stack:
 
         self.data.remove_last()
 
+    def min_value(self):
+        if self.is_empty():
+            return None
+
+        min_value = self.data.head_value
+
+        while min_value.next is None:
+            if min_value.next < min_value:
+                min_value = min_value.next
+
+        return min_value
+
     def peek(self, position):
         if self.is_empty():
             return None
@@ -47,3 +59,10 @@ if __name__ == "__main__":
     #   len=2
     #   value=Node(value=1, next=Node(value=2, next=None)))
     print(content_stack.data)
+
+    # saída:
+    # Node(
+    #   value=1
+    #   next=Node(value=2, next=None)
+    # )
+    print(content_stack.min_value())
