@@ -15,8 +15,6 @@ class Stack:
         if self.is_empty():
             return None
 
-        # -1 se refere ao último objeto da pilha.
-        # Ou seja, o valor do topo da pilha
         value = self._data[-1]
         del self._data[-1]
         return value
