@@ -1,23 +1,14 @@
 from set import Set
 
 
-def create_set(list):
-    new_set = Set()
-
-    for num in list:
-        new_set.add(num)
-
-    return new_set
-
-
 def main():
     estudantes = [1, 2, 3, 4, 5, 6, 7]
     lista1_entregues = [1, 4, 7, 3]
     lista2_entregues = [3, 1, 6]
 
-    students = create_set(estudantes)
-    entregues_one = create_set(lista1_entregues)
-    entregues_two = create_set(lista2_entregues)
+    students = Set().create(estudantes)
+    entregues_one = Set().create(lista1_entregues)
+    entregues_two = Set().create(lista2_entregues)
 
     delivered_both = entregues_one.intersection(entregues_two)
 
@@ -29,6 +20,7 @@ def main():
         "who already delivered the two lists: ",
         delivered_both,
     )
+
     print(
         "Who has submitted either of the two lists: ",
         entregues_one.union(entregues_two),
