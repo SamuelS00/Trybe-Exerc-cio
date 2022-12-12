@@ -39,3 +39,44 @@ class Set:
                 new_set.add(item)
 
         return new_set
+
+    def difference(self, sets):
+        new_set = Set()
+        set_a = self.get_all()
+
+        values = []
+
+        for set in sets:
+            values += set.get_all()
+
+        for value in set_a:
+            if value not in values:
+                new_set.add(value)
+
+        return new_set
+
+    def is_subset(self, setB):
+        set_a = self.get_all()
+        set_b = setB.get_all()
+
+        response = True
+
+        for value in set_a:
+            if value not in set_b:
+                response = False
+                break
+
+        return response
+
+    def is_superset(self, setB):
+        set_a = self.get_all()
+        set_b = setB.get_all()
+
+        response = True
+
+        for value in set_b:
+            if value not in set_a:
+                response = False
+                break
+
+        return response
