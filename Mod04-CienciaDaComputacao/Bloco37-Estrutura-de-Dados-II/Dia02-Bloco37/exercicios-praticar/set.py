@@ -54,3 +54,16 @@ class Set:
                 new_set.add(value)
 
         return new_set
+
+    def is_subset(self, setB):
+        set_a = self.get_all()
+        set_b = setB.get_all()
+
+        response = True
+
+        for value in set_a:
+            if value not in set_b:
+                response = False
+                break
+
+        return response
