@@ -67,3 +67,16 @@ class Set:
                 break
 
         return response
+
+    def is_superset(self, setB):
+        set_a = self.get_all()
+        set_b = setB.get_all()
+
+        response = True
+
+        for value in set_b:
+            if value not in set_a:
+                response = False
+                break
+
+        return response
