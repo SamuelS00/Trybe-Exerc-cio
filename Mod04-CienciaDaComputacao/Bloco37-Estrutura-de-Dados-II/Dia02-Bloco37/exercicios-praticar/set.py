@@ -39,3 +39,18 @@ class Set:
                 new_set.add(item)
 
         return new_set
+
+    def difference(self, sets):
+        new_set = Set()
+        set_a = self.get_all()
+
+        values = []
+
+        for set in sets:
+            values += set.get_all()
+
+        for value in set_a:
+            if value not in values:
+                new_set.add(value)
+
+        return new_set
