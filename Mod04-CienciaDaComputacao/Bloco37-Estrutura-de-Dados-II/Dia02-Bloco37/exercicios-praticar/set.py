@@ -8,6 +8,14 @@ class Set:
     def __contains__(self, value):
         return self.data[value] is True
 
+    def create(self, list):
+        new_set = Set()
+
+        for num in list:
+            new_set.add(num)
+
+        return new_set
+
     def get_all(self):
         return [i for i in range(0, 1001) if self.data[i] is True]
 
